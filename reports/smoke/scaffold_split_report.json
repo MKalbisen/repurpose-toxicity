@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "sizes": {
+    "train": 6258,
+    "validation": 782,
+    "test": 782
+  },
+  "scaffold_overlap": [
+    0,
+    0,
+    0
+  ],
+  "requested_ratios": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "actual_ratios": [
+    0.8000511378164152,
+    0.09997443109179238,
+    0.09997443109179238
+  ],
+  "acyclic_policy": "all empty scaffolds stay together",
+  "group_count": 2295
+}

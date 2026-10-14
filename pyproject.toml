@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=75", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repurpose-toxicity"
+version = "0.1.0"
+description = "PrimeKG, PyKEEN ve Tox21 tabanlı araştırma kokpiti"
+requires-python = ">=3.11,<3.12"
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "scikit-learn>=1.5,<2", "rdkit>=2024.9", "torch>=2.5,<3", "pykeen==1.11.1", "xgboost>=2.1,<4", "streamlit>=1.40,<2", "pyvis==0.3.2", "stmol==0.0.9", "py3Dmol>=2.4,<3", "requests>=2.32,<3", "PyYAML>=6,<7", "matplotlib>=3.9,<4", "reportlab>=4,<5", "ipywidgets==7.6.3", "ipython_genutils==0.2.0"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.11,<1"]
+academic = ["joblib>=1.4,<2", "psutil>=5.9,<8"]
+
+[project.scripts]
+repurpose = "repurpose.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff]
+line-length = 110

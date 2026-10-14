@@ -1,0 +1,7 @@
+{
+  "total_drugs": 50,
+  "queried_this_run": 32,
+  "verified_structures": 36,
+  "unmatched": 14,
+  "policy": "DrugBank ID must appear in PubChem CID synonyms or explicit curated verification."
+}

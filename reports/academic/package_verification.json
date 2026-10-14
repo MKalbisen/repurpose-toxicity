@@ -1,0 +1,11 @@
+{
+  "zip": "exports/academic-v2-compute.zip",
+  "bytes": 96916368,
+  "entries": 120,
+  "CRC_valid": true,
+  "code_hashes_valid": true,
+  "verified_data_files": 14,
+  "verified_model_files": 25,
+  "raw_data_included": false,
+  "sha256": "5aca6e3662a774292514cd1f432b4fd55eeb3d84c3e0cc32b11424687ac8faeb"
+}

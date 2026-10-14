@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "created": "2026-10-08T12:17:40.196208+00:00",
+  "updated": "2026-10-11T10:11:02.889726+00:00",
+  "preferences": {
+    "hardware": "RTX 3050 Ti Laptop GPU 4 GB; uzun eğitim başka makinede yapılabilir",
+    "academic_target": "not yet specified"
+  },
+  "stages": {
+    "A00": {
+      "name": "Deney ve devam kayıtları",
+      "depends_on": [],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A00-001",
+          "started": "2026-10-08T12:17:40.256400+00:00",
+          "status": "validated",
+          "ended": "2026-10-08T12:17:42.840024+00:00"
+        },
+        {
+          "id": "A00-002",
+          "started": "2026-10-08T12:23:39.100201+00:00",
+          "status": "validated",
+          "ended": "2026-10-08T12:23:41.732173+00:00"
+        },
+        {
+          "id": "A00-003",
+          "started": "2026-10-11T10:06:07.096758+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:06:21.180643+00:00"
+        },
+        {
+          "id": "A00-004",
+          "started": "2026-10-11T10:07:58.490678+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:08:06.841679+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "ACADEMIC_PLAN.md",
+          "sha256": "0bac5a41bd6690360240409b4df6f90e9055ff4035ee9c79729631b6935188be",
+          "bytes": 11798
+        },
+        {
+          "path": "configs/academic_protocol.yaml",
+          "sha256": "5ca136c423f810d35af41a4a1f68d5f78630d7cedb70dbe342ce6e90d32305d9",
+          "bytes": 1427
+        },
+        {
+          "path": "src/repurpose/academic/state.py",
+          "sha256": "63a851915b7cbc4e4d681e7238f2ab1c7c54cdb14b159ed3719c6a250eeea3e9",
+          "bytes": 9954
+        },
+        {
+          "path": "src/repurpose/academic/cli.py",
+          "sha256": "1372e55092441254f9e77b6c31bcd604cdebd694e454b926296eb703d8b46215",
+          "bytes": 6795
+        },
+        {
+          "path": "scripts/resume_academic.sh",
+          "sha256": "99d500c8f49c88ee79000cbeae5d7459c5c6c16995baadbe3a8cf7fac047e185",
+          "bytes": 138
+        },
+        {
+          "path": "tests/test_academic_state.py",
+          "sha256": "a34e5bc6b5bc3f55c451a98417ac87da51a4d86f8a7c0b4f05adb5fccb698846",
+          "bytes": 2861
+        },
+        {
+          "path": "reports/academic/foundation_validation.json",
+          "sha256": "a8cd89f6d8b18435d7b1059d22f8cc4070051f167be7def5899e771bafb38a4e",
+          "bytes": 133
+        },
+        {
+          "path": "reports/academic/foundation_tests.xml",
+          "sha256": "dfeb1738417500b44b903c055505c585a641f2a23936cb11bf675fda11080990",
+          "bytes": 960
+        }
+      ],
+      "summary": "Plan/protokol taslağı, atomik JSON, olay günlüğü, artefakt hash ve kesinti testleri geçti."
+    },
+    "A01": {
+      "name": "Bilimsel veri/kod denetimi",
+      "depends_on": [
+        "A00"
+      ],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A01-001",
+          "started": "2026-10-08T12:17:43.396731+00:00",
+          "status": "validated",
+          "ended": "2026-10-08T12:17:45.766693+00:00"
+        },
+        {
+          "id": "A01-002",
+          "started": "2026-10-08T12:23:42.334920+00:00",
+          "status": "validated",
+          "ended": "2026-10-08T12:23:43.979959+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "src/repurpose/academic/audit.py",
+          "sha256": "011f0b70ba2b8b611fac341c13eb51dbc06a21504b099e12bd67f9e02dba07de",
+          "bytes": 13281
+        },
+        {
+          "path": "reports/academic/audit.json",
+          "sha256": "49986683d84944ee23da8141bdd5fee9b2d20402fa940aac518c39710ab1d7d4",
+          "bytes": 20669
+        },
+        {
+          "path": "reports/academic/audit.md",
+          "sha256": "aa5853e6ef85c9e30541a27f0c55bf5bb266ac77171e0e5531e7a7aa24f065e8",
+          "bytes": 3130
+        },
+        {
+          "path": "reports/academic/assay_label_audit.csv",
+          "sha256": "59b0cdc7cd9dec2e49dd53535823966c9542048c1b218d48a91ee8ad8ccb30e4",
+          "bytes": 1856
+        },
+        {
+          "path": "reports/data_manifest.json",
+          "sha256": "3a1328c47832b2f03a3d92639160272753dd096ae2f2a106f0514e3d3a8d33ad",
+          "bytes": 1108
+        },
+        {
+          "path": "data/processed/smoke/entities.csv",
+          "sha256": "f56411d3bb9a01ab092bb5ade38336c03a80e77e9610933c3a4371f99c1ddc6e",
+          "bytes": 12029
+        },
+        {
+          "path": "data/processed/smoke/triples.tsv",
+          "sha256": "4c1c4f80a3639d954956b530b275f04423129d2f3ea6018c9b51a4b88ed39dfe",
+          "bytes": 75920
+        },
+        {
+          "path": "data/processed/smoke/train.tsv",
+          "sha256": "9ed5e9b964022997828d810ffd5bc5de689d270488cb376dabf185a926b5a13f",
+          "bytes": 61211
+        },
+        {
+          "path": "data/processed/smoke/validation.tsv",
+          "sha256": "595267e695ddbeb121723cfff781f8759ac404712106cb754b935615a53682e7",
+          "bytes": 7392
+        },
+        {
+          "path": "data/processed/smoke/test.tsv",
+          "sha256": "0a1f83301b0a2df3b8f0ea468294f0dd1f04376b5709ce65e2daf860caf274bc",
+          "bytes": 7317
+        },
+        {
+          "path": "data/processed/smoke/tox21_clean.csv",
+          "sha256": "bf04cd907197342616e0a046aebd2fe1ab90f635a37ab9ee9e93e32d5cdc4b30",
+          "bytes": 1072108
+        },
+        {
+          "path": "data/processed/smoke/tox21_features.npz",
+          "sha256": "2bf17e23cfff0961d77c6d96740ffca4e8d42990f43d7c65c70cb7748ff43bd5",
+          "bytes": 343445
+        },
+        {
+          "path": "data/processed/smoke/drug_chemical_mapping.csv",
+          "sha256": "65a07f8fa47da56c85e02b17b58d2ab19c4b355badabd4e26710325d6a8353c2",
+          "bytes": 13127
+        },
+        {
+          "path": "src/repurpose/kg/train.py",
+          "sha256": "78a76c8a6db30db0b48419ef152cdd1ecda12440c8cc2a13da08a0b991c4977f",
+          "bytes": 4929
+        },
+        {
+          "path": "src/repurpose/data/kg_data.py",
+          "sha256": "6464baf8e1463fc2ffeadba1172bf618c3ff10a03b3c2194e57c06dfa9aff41a",
+          "bytes": 8638
+        },
+        {
+          "path": "src/repurpose/data/chemistry.py",
+          "sha256": "916ec446d135396ed196b9c1aa2a83551db097006452368dc6a5c0eb50773552",
+          "bytes": 1988
+        },
+        {
+          "path": "src/repurpose/data/tox21.py",
+          "sha256": "fd3f97ff631be8ceae9637a349a22fb9a5aaa4d02b0d0c0a2174b6715ffb58de",
+          "bytes": 4872
+        },
+        {
+          "path": "src/repurpose/toxicity/train.py",
+          "sha256": "5b6aca4704fd394fa9f52b04d4d2a0744d564e1fa3edddbb29134d2d60da0bb9",
+          "bytes": 7685
+        },
+        {
+          "path": "src/repurpose/toxicity/evaluate.py",
+          "sha256": "6f0bc0f67325f40b0bc57b174b94a9c44dc613edf259ae67e6f98b3ee9368a08",
+          "bytes": 2461
+        },
+        {
+          "path": "src/repurpose/toxicity/models.py",
+          "sha256": "ac3573fae76c773614bda326f76aa779dde58f2119d6f638cd71d8f3f4ce70a2",
+          "bytes": 810
+        }
+      ],
+      "summary": "Read-only bilimsel denetim tamamlandı; bulgular audit.json/md içinde. Kritik açıklar hâlâ A03–A09 iş listesinde."
+    },
+    "A02": {
+      "name": "Hedef değerlendirme altyapısı",
+      "depends_on": [
+        "A01"
+      ],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A02-001",
+          "started": "2026-10-08T12:17:46.446882+00:00",
+          "status": "validated",
+          "ended": "2026-10-08T12:17:53.885855+00:00"
+        },
+        {
+          "id": "A02-002",
+          "started": "2026-10-08T12:23:44.625219+00:00",
+          "status": "validated",
+          "ended": "2026-10-08T12:23:52.170780+00:00"
+        },
+        {
+          "id": "A02-003",
+          "started": "2026-10-11T10:06:21.286027+00:00",
+          "status": "failed",
+          "ended": "2026-10-11T10:06:41.247511+00:00"
+        },
+        {
+          "id": "A02-004",
+          "started": "2026-10-11T10:08:06.933481+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:08:29.147877+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "src/repurpose/academic/metrics.py",
+          "sha256": "07b8d8d8ed4644a8e93eebb5dde487d4178d3752879e184bfb7bf6efc2034a77",
+          "bytes": 13120
+        },
+        {
+          "path": "src/repurpose/academic/diagnostic.py",
+          "sha256": "56d19dfcda1a8c3ec04fd88b9614045ae8779076d334d3253894e0a70b703690",
+          "bytes": 2531
+        },
+        {
+          "path": "tests/test_academic_metrics.py",
+          "sha256": "4b7d2427ab5e6b5f01e306e0da0cb0e243aca5b1afd84b4ef26ab3fb2aa1903e",
+          "bytes": 4915
+        },
+        {
+          "path": "reports/academic/metrics_validation.json",
+          "sha256": "c097c51ef3de5f9594b6c90e943a7eec96bd1b6255a915f914590272ade2fd38",
+          "bytes": 165
+        },
+        {
+          "path": "reports/academic/validation_diagnostic.json",
+          "sha256": "2eb5a02c5bba2c23224744a9ac6664ae9b2585decba09cfd320fc996d389d13b",
+          "bytes": 1774
+        },
+        {
+          "path": "reports/academic/validation_drug_ranks.csv",
+          "sha256": "ec8f3d65a18d00269d28214b033fb8e321631d2c28f35e6aceb5c1aa73a80d5e",
+          "bytes": 10734
+        },
+        {
+          "path": "reports/academic/metrics_tests.xml",
+          "sha256": "61a5844a9c63cfb6d475a6957492e9a5d6d66cee45b8df8020f549c6ad723205",
+          "bytes": 1534
+        }
+      ],
+      "summary": "Drug-only filtered MRR, canonical hedef tekilleştirme, analytic random baseline, scaffold/paired bootstrap testleri geçti; legacy validation adapter çalıştı."
+    },
+    "A03": {
+      "name": "Akademik veri ve split üretimi",
+      "depends_on": [
+        "A02"
+      ],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A03-001",
+          "started": "2026-10-11T10:09:12.576216+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:09:12.867455+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "data/processed/academic-v2/toxicity/manifest.json",
+          "sha256": "9fcbc4ac6c1e2800fb72fed59d600e67c86d191537f6e432b2d6b2f88eec9653",
+          "bytes": 2411
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/calibration.npz",
+          "sha256": "69aee152e00242f6a50f21a7c7270daf81348bdcf2b6ecef3668be60806b3085",
+          "bytes": 54665
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/chemical_identity.csv",
+          "sha256": "ac66f1f3d8a4b89b2de835d731dd9076c93974207cc0ec0a2e7a2623a8e6765f",
+          "bytes": 1985915
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/development_labels.csv",
+          "sha256": "8499f74b4ea6b69a20890bcc21067a57965dbdf44ea151ffe8cbf40d614bf36d",
+          "bytes": 1158
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/excluded_molecules.csv",
+          "sha256": "03a1d85eb7402ee5190f4684b069bb8b0f1e01bd6020e94593050d2b008788ea",
+          "bytes": 42841
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/label_conflicts.csv",
+          "sha256": "5811c41168d592e48c462f05c7b9b22f265f1660c0a99a8d7e10a400cb98cdb7",
+          "bytes": 24
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/molecules.csv",
+          "sha256": "5383c1b2783c391c1cf7c61c196c644864ada38fb28421f5b3a9417d66d02c72",
+          "bytes": 1993346
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/nearest_train_similarity.csv",
+          "sha256": "d7f35c39d9eb88ecbbac716a848e20ca661d566f38382cdf828d41d0ca698ad0",
+          "bytes": 75202
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/test.npz",
+          "sha256": "44564f3298410b8578a93029097be40dd527804be849a49e52b537fe2d6e1a3e",
+          "bytes": 53878
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/train.npz",
+          "sha256": "d7bfe4191cc131a06b4f750907e519fe5c1a1795399e268145a2877e76084602",
+          "bytes": 236234
+        },
+        {
+          "path": "data/processed/academic-v2/toxicity/validation.npz",
+          "sha256": "76f3ff27135bb7b02ef2ec6a8f044437294bf0351f80775f871811368b897a92",
+          "bytes": 54415
+        },
+        {
+          "path": "data/processed/academic-v2/kg/manifest.json",
+          "sha256": "8711de9ebf444ffaeabe6670f5f6a62abc400a153437f5ef4584f7be6dd2ace0",
+          "bytes": 2224
+        },
+        {
+          "path": "data/processed/academic-v2/kg/entities.csv",
+          "sha256": "54ca963d8c03b300a8fde911c21a373894cf8bf3b3652a096f3034eec6c475c4",
+          "bytes": 2321921
+        },
+        {
+          "path": "data/processed/academic-v2/kg/test.tsv",
+          "sha256": "76873cf37275a1453c3e21cb4dd9f5b9bfc6434537d538c57b081794edfd2076",
+          "bytes": 14870009
+        },
+        {
+          "path": "data/processed/academic-v2/kg/train.tsv",
+          "sha256": "4a808b93d4d6e6c102e0c60053c0e6f40a3b23c1c09597d2b096a91bc813685e",
+          "bytes": 124240131
+        },
+        {
+          "path": "data/processed/academic-v2/kg/validation.tsv",
+          "sha256": "0f7158e28915e828c205c8e731a6203c48e5d3589a6a7995da4b930dfcc824d6",
+          "bytes": 14881795
+        },
+        {
+          "path": "src/repurpose/academic/prepare.py",
+          "sha256": "d53489bb6b97397f8aade6bf5cd77d29a5a70b714506df8862cb67fa450d7d65",
+          "bytes": 16764
+        },
+        {
+          "path": "tests/test_academic_prepare.py",
+          "sha256": "ed96f932a6e1573990804edff345d6a5cb423e68d50c1a856784c63d2500d5be",
+          "bytes": 2136
+        }
+      ],
+      "summary": "7729 molekül, altı kimlikte overlap=0; 47130 entity/3757160 triple; coverage tam. Ayna sürümü/lisans sınırlılığı açık."
+    },
+    "A04": {
+      "name": "CPU/GPU pilot ve development protokolü",
+      "depends_on": [
+        "A03"
+      ],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A04-001",
+          "started": "2026-10-11T10:09:13.389738+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:09:13.909109+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/academic/runs/academic-v2/pilot/hardware_pilot.json",
+          "sha256": "fe536471b3b3cfbdab8bc90be789635d8bd97cc5e1ae6ca83e31d2efcea6d794",
+          "bytes": 2091
+        },
+        {
+          "path": "configs/academic_run.yaml",
+          "sha256": "3dd2e96b587472f9d0750756015efe60d8f0dafadb6748a91cce7fac21279bec",
+          "bytes": 1024
+        },
+        {
+          "path": "src/repurpose/academic/experiment.py",
+          "sha256": "ecda8a4f990264aba3d2800b6dc89e37cf4a7345731298c8143d09f29cb9b39b",
+          "bytes": 9210
+        },
+        {
+          "path": "tests/test_academic_experiment.py",
+          "sha256": "f5319629bf364185d4441cea07f5efbf034c5a0370d1d3994d99d153e2dfdd1c",
+          "bytes": 6822
+        },
+        {
+          "path": "reports/academic/windows_tests.xml",
+          "sha256": "83292b2a52231e91f90ae8b93718fa1a55bda616e0b61778a882a98445ffb857",
+          "bytes": 4725
+        }
+      ],
+      "summary": "3050 Ti CUDA pilotu başarılı; KGE üst bütçe yaklaşık 464 saat. MLP/KGE checkpoint ve test kapısı test edildi."
+    },
+    "A05": {
+      "name": "Nihai protokol/test kilidi",
+      "depends_on": [
+        "A04"
+      ],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A05-001",
+          "started": "2026-10-11T10:09:14.848011+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:09:15.583604+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/academic/runs/academic-v2/protocol_lock.json",
+          "sha256": "222460b0b2d413dcaaa43b5047ebaa8bb85d9caa488831e7f2e76b8f74d41263",
+          "bytes": 6404
+        },
+        {
+          "path": "src/repurpose/academic/protocol.py",
+          "sha256": "12e0a58ba2ec6157aaa7b905921b8e92002c98d0ba2f73c4d4450c2695d3f17d",
+          "bytes": 3034
+        },
+        {
+          "path": "configs/academic_run.yaml",
+          "sha256": "3dd2e96b587472f9d0750756015efe60d8f0dafadb6748a91cce7fac21279bec",
+          "bytes": 1024
+        },
+        {
+          "path": "requirements-academic-lock.txt",
+          "sha256": "85cb9833fd325438c3e8d4f72ca6e46fc129442ee228a0f910f80a8717345218",
+          "bytes": 254
+        }
+      ],
+      "summary": "v2 protokol kilitli. Ayrı final komutu ve seçilmiş ağırlık hash kaydı etkin; akademik test henüz açılmadı."
+    },
+    "A06": {
+      "name": "Toksisite eğitimleri ve baselines",
+      "depends_on": [
+        "A05"
+      ],
+      "status": "validated",
+      "attempts": [
+        {
+          "id": "A06-001",
+          "started": "2026-10-11T10:09:16.616287+00:00",
+          "status": "validated",
+          "ended": "2026-10-11T10:09:17.670626+00:00"
+        }
+      ],
+      "evidence": [
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/17/complete.json",
+          "sha256": "df39c1765a43da84f32db6b73944002c2b7b4d647bbd10eb4c6d6a11e51ef640",
+          "bytes": 626
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/17/logistic.joblib",
+          "sha256": "c847d111a13a11daa3e98b5ef26f37158df3e72d933b314e67d1b3e75f8bc80a",
+          "bytes": 104320
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/17/mlp.joblib",
+          "sha256": "ec8934e122255f2807a990383ac8a6abcfe0043f96eae5113256eabdc9bb9e0a",
+          "bytes": 605
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/17/mlp.pt",
+          "sha256": "1be9356f18eecc376a9234030b7ea4d6aa64f8ce420bfc2ff0f0a94e32797b29",
+          "bytes": 2653851
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/17/prevalence.joblib",
+          "sha256": "6dcaee08030956d9a4dbd87bac5a4e6d384caff110b8c18f03c47a98afe6fdfb",
+          "bytes": 307
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/17/xgboost.joblib",
+          "sha256": "1210b52db2b850347427f8d3d9ead67e14389abe4d30317fe58265986053a48e",
+          "bytes": 2972361
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/29/complete.json",
+          "sha256": "734d4aebaa46fed35d45bd98ee84610579aa6a5c2b9f9f94e01a527138154209",
+          "bytes": 626
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/29/logistic.joblib",
+          "sha256": "348a777994f30e836b83e59c51c857b92d894acf1cd93d152ee60f79c0e56092",
+          "bytes": 104320
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/29/mlp.joblib",
+          "sha256": "d54ae0d4c4644e52aeb19ae5088a8aafd52faca7a0998d814237cf7405a5c984",
+          "bytes": 605
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/29/mlp.pt",
+          "sha256": "b6efc439e721ec3802ca1c03770745b87166686861b178b6e93457ba291aeaed",
+          "bytes": 2653851
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/29/prevalence.joblib",
+          "sha256": "6dcaee08030956d9a4dbd87bac5a4e6d384caff110b8c18f03c47a98afe6fdfb",
+          "bytes": 307
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/29/xgboost.joblib",
+          "sha256": "60346280021e9f4d210262f4eb25033d0ee0b4911f1448ed50b08a9ae05dc0a0",
+          "bytes": 2950119
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/43/complete.json",
+          "sha256": "8774ee90e117373afda7b626e266ad8468933b7489d76119e5f842ae6206b04f",
+          "bytes": 626
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/43/logistic.joblib",
+          "sha256": "66c8982083b4a008477ae25073a923837412b3593a6ed61f3c6baba9c3b39cb0",
+          "bytes": 104320
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/43/mlp.joblib",
+          "sha256": "cd0836c05063de95adcb28ec3987e97e279ba3f2bc74b5fd09462ec1013ca307",
+          "bytes": 605
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/43/mlp.pt",
+          "sha256": "2456cd716ebf737b51864c4bdd0eb4a9d7780f2c6b26dcf4369847954c20a9c5",
+          "bytes": 2653851
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/43/prevalence.joblib",
+          "sha256": "6dcaee08030956d9a4dbd87bac5a4e6d384caff110b8c18f03c47a98afe6fdfb",
+          "bytes": 307
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/43/xgboost.joblib",
+          "sha256": "33fdba14ff7c1f36297bd25b0151ff59c24267ae763fcea7f990bea4fd3a1f91",
+          "bytes": 2457180
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/71/complete.json",
+          "sha256": "c55bde13b5f5ae0f884b050e691bf19e76f7955290717cf9e66062a573464555",
+          "bytes": 626
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/71/logistic.joblib",
+          "sha256": "70393a258009ea9b0bc7a0e5a4f1c1877efd4f9d1a98d8fa77e3605a91c157b1",
+          "bytes": 104320
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/71/mlp.joblib",
+          "sha256": "502c5528ac4363446a32183bc58e6df80521adc6af5f4a3e8b84805b699132ce",
+          "bytes": 605
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/71/mlp.pt",
+          "sha256": "bdfa02541531bfae31e19fec637fa973c758abef773bf7b9ac92d4185a3e1e1c",
+          "bytes": 2653851
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/71/prevalence.joblib",
+          "sha256": "6dcaee08030956d9a4dbd87bac5a4e6d384caff110b8c18f03c47a98afe6fdfb",
+          "bytes": 307
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/71/xgboost.joblib",
+          "sha256": "7341a06ed964bb98b98282e8065065ef59f87aa2b66e9b475d5edca8cef13703",
+          "bytes": 2726135
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/101/complete.json",
+          "sha256": "eca3b8824bddd0c39c110384d995036d534f32775c34fe4feed160350d2d9f13",
+          "bytes": 627
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/101/logistic.joblib",
+          "sha256": "73353c5ea3606e507d0f8deebe1af73a075b953e305fc311528e6bf8f014d449",
+          "bytes": 104320
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/101/mlp.joblib",
+          "sha256": "1c5b9d954bba48afab917cee8da25ba32b065ed11319390d532805f1348cda2e",
+          "bytes": 605
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/101/mlp.pt",
+          "sha256": "f111f2bbbd53de97d14e27ccd92b5e341502f17b8747f8fc851efdac37083d4f",
+          "bytes": 2653851
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/101/prevalence.joblib",
+          "sha256": "6dcaee08030956d9a4dbd87bac5a4e6d384caff110b8c18f03c47a98afe6fdfb",
+          "bytes": 307
+        },
+        {
+          "path": "reports/academic/runs/academic-v2/toxicity/101/xgboost.joblib",
+          "sha256": "9e6c0d62592550ecd558081de3534f7c976f5b39b3625d84d6255358aee4ac67",
+          "bytes": 2457277
+        },
+        {
+          "path": "src/repurpose/academic/toxicity.py",
+          "sha256": "d7da9f93f7248c948a74ab4828848f6115833b3155e36d11549679d8a62ddc1c",
+          "bytes": 17713
+        }
+      ],
+      "summary": "17/29/43/71/101 seed; prevalence, Logistic Regression, XGBoost, MLP ve ayrı grup kalibrasyonu tamam. Final test açılmadı."
+    },
+    "A07": {
+      "name": "KGE eğitimleri ve baselines",
+      "depends_on": [
+        "A05"
+      ],
+      "status": "planned",
+      "attempts": [],
+      "evidence": [],
+      "summary": ""
+    },
+    "A08": {
+      "name": "Final test ve istatistik",
+      "depends_on": [
+        "A06",
+        "A07"
+      ],
+      "status": "planned",
+      "attempts": [],
+      "evidence": [],
+      "summary": ""
+    },
+    "A09": {
+      "name": "Entegrasyon/ablation/dış doğrulama",
+      "depends_on": [
+        "A08"
+      ],
+      "status": "planned",
+      "attempts": [],
+      "evidence": [],
+      "summary": ""
+    },
+    "A10": {
+      "name": "Akademik rapor ve yeniden üretme",
+      "depends_on": [
+        "A09"
+      ],
+      "status": "planned",
+      "attempts": [],
+      "evidence": [],
+      "summary": ""
+    }
+  },
+  "notes": [
+    {
+      "time": "2026-10-08T12:24:57.388890+00:00",
+      "message": "Kullanıcı: şu an GPU yok; gerektiğinde T4/L4 sağlanabilir. Akademik hedef türü belirtilmedi. Ücretli compute başlatılmadı."
+    },
+    {
+      "time": "2026-10-08T12:24:58.110924+00:00",
+      "message": "A01 gerçek bulgu: scaffold/canonical overlap=0; 11 fingerprint eşdeğerlik grubu split sınırlarını aşıyor. A03 bileşen gruplaması gerektirir; bu tek başına aynı molekül/etiket sızıntısı kanıtı değildir."
+    },
+    {
+      "time": "2026-10-08T12:24:58.845407+00:00",
+      "message": "A02 validation-only karşılaştırma: RotatE drug-only MRR=0.173939; train-popularity MRR=0.221466; random expected=0.101415. Nihai test/akademik başarı sonucu değildir."
+    },
+    {
+      "time": "2026-10-08T12:24:59.824092+00:00",
+      "message": "Bu oturumda eklenenler: ACADEMIC_PLAN.md, ACADEMIC_PROGRESS.md, configs/academic_protocol.yaml, src/repurpose/academic/{state,audit,metrics,diagnostic,cli}.py, tests/test_academic_state.py, tests/test_academic_metrics.py, scripts/resume_academic.sh; README ve PLAN yönlendirmeleri güncellendi."
+    },
+    {
+      "time": "2026-10-08T12:25:00.938907+00:00",
+      "message": "Sonraki somut iş emri docs/academic/A03_WORK_ORDER.md içine kaydedildi: A03.1 versioned chemical identity/cache ve tautomer completion; A03.2 transitive scaffold/parent/fingerprint split; A03.3 KG ana deney verisi. A03 henüz uygulanmadı."
+    },
+    {
+      "time": "2026-10-08T12:25:49.738060+00:00",
+      "message": "Son bütünlük kontrolü: 26 test geçti; ruff temiz. reports/academic/all_tests.xml ve all_tests.log kayıtlı. Resume A00/A01/A02 için geçerli kanıtı tanıyıp adımları atladı; sıradaki iş A03."
+    },
+    {
+      "time": "2026-10-11T10:09:18.824722+00:00",
+      "message": "11 Ekim 2026: Kullanıcı 3050 Ti sağladı; uzun KGE eğitimi için başka makine kullanabilecek. Tam arama yerelde başlatılmadı. Paket/komutlar docs/academic/REMOTE_TRAINING.md içinde. A07–A10 ve tam kimyasal eşleme/entegrasyon henüz tamamlanmadı."
+    }
+  ]
+}

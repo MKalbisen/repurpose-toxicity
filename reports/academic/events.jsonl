@@ -1,0 +1,40 @@
+{"time": "2026-10-08T12:17:40.225042+00:00", "type": "initialized", "stage": null, "message": "Akademik plan ve devam kayıtları hazır."}
+{"time": "2026-10-08T12:17:40.258630+00:00", "type": "started", "stage": "A00", "message": "Plan, protokol taslağı ve hash/atomik durum testleri doğrulanıyor."}
+{"time": "2026-10-08T12:17:42.842417+00:00", "type": "validated", "stage": "A00", "message": "Plan/protokol taslağı, atomik JSON, olay günlüğü, artefakt hash ve kesinti testleri geçti."}
+{"time": "2026-10-08T12:17:43.399953+00:00", "type": "started", "stage": "A01", "message": "MVP veri, split, kod ve kaynak kapsamı hesaplanıyor."}
+{"time": "2026-10-08T12:17:45.769071+00:00", "type": "validated", "stage": "A01", "message": "Read-only bilimsel denetim tamamlandı; bulgular audit.json/md içinde. Kritik açıklar hâlâ A03–A09 iş listesinde."}
+{"time": "2026-10-08T12:17:46.448283+00:00", "type": "started", "stage": "A02", "message": "Drug-only retrieval ve group/paired bootstrap kabul testleri çalışıyor."}
+{"time": "2026-10-08T12:17:53.887524+00:00", "type": "validated", "stage": "A02", "message": "Drug-only filtered MRR, canonical hedef tekilleştirme, analytic random baseline, scaffold/paired bootstrap testleri geçti; legacy validation adapter çalıştı."}
+{"time": "2026-10-08T12:23:39.050794+00:00", "type": "initialized", "stage": null, "message": "Akademik plan ve devam kayıtları hazır."}
+{"time": "2026-10-08T12:23:39.101775+00:00", "type": "started", "stage": "A00", "message": "Plan, protokol taslağı ve hash/atomik durum testleri doğrulanıyor."}
+{"time": "2026-10-08T12:23:41.733935+00:00", "type": "validated", "stage": "A00", "message": "Plan/protokol taslağı, atomik JSON, olay günlüğü, artefakt hash ve kesinti testleri geçti."}
+{"time": "2026-10-08T12:23:42.337852+00:00", "type": "started", "stage": "A01", "message": "MVP veri, split, kod ve kaynak kapsamı hesaplanıyor."}
+{"time": "2026-10-08T12:23:43.982122+00:00", "type": "validated", "stage": "A01", "message": "Read-only bilimsel denetim tamamlandı; bulgular audit.json/md içinde. Kritik açıklar hâlâ A03–A09 iş listesinde."}
+{"time": "2026-10-08T12:23:44.626527+00:00", "type": "started", "stage": "A02", "message": "Drug-only retrieval ve group/paired bootstrap kabul testleri çalışıyor."}
+{"time": "2026-10-08T12:23:52.172112+00:00", "type": "validated", "stage": "A02", "message": "Drug-only filtered MRR, canonical hedef tekilleştirme, analytic random baseline, scaffold/paired bootstrap testleri geçti; legacy validation adapter çalıştı."}
+{"time": "2026-10-08T12:24:57.390831+00:00", "type": "note", "stage": null, "message": "Kullanıcı: şu an GPU yok; gerektiğinde T4/L4 sağlanabilir. Akademik hedef türü belirtilmedi. Ücretli compute başlatılmadı."}
+{"time": "2026-10-08T12:24:58.112466+00:00", "type": "note", "stage": null, "message": "A01 gerçek bulgu: scaffold/canonical overlap=0; 11 fingerprint eşdeğerlik grubu split sınırlarını aşıyor. A03 bileşen gruplaması gerektirir; bu tek başına aynı molekül/etiket sızıntısı kanıtı değildir."}
+{"time": "2026-10-08T12:24:58.847088+00:00", "type": "note", "stage": null, "message": "A02 validation-only karşılaştırma: RotatE drug-only MRR=0.173939; train-popularity MRR=0.221466; random expected=0.101415. Nihai test/akademik başarı sonucu değildir."}
+{"time": "2026-10-08T12:24:59.829634+00:00", "type": "note", "stage": null, "message": "Bu oturumda eklenenler: ACADEMIC_PLAN.md, ACADEMIC_PROGRESS.md, configs/academic_protocol.yaml, src/repurpose/academic/{state,audit,metrics,diagnostic,cli}.py, tests/test_academic_state.py, tests/test_academic_metrics.py, scripts/resume_academic.sh; README ve PLAN yönlendirmeleri güncellendi."}
+{"time": "2026-10-08T12:25:00.940876+00:00", "type": "note", "stage": null, "message": "Sonraki somut iş emri docs/academic/A03_WORK_ORDER.md içine kaydedildi: A03.1 versioned chemical identity/cache ve tautomer completion; A03.2 transitive scaffold/parent/fingerprint split; A03.3 KG ana deney verisi. A03 henüz uygulanmadı."}
+{"time": "2026-10-08T12:25:03.438086+00:00", "type": "initialized", "stage": null, "message": "Akademik plan ve devam kayıtları hazır."}
+{"time": "2026-10-08T12:25:49.740118+00:00", "type": "note", "stage": null, "message": "Son bütünlük kontrolü: 26 test geçti; ruff temiz. reports/academic/all_tests.xml ve all_tests.log kayıtlı. Resume A00/A01/A02 için geçerli kanıtı tanıyıp adımları atladı; sıradaki iş A03."}
+{"time": "2026-10-11T10:06:07.073333+00:00", "type": "initialized", "stage": null, "message": "Akademik plan ve devam kayıtları hazır."}
+{"time": "2026-10-11T10:06:07.098072+00:00", "type": "started", "stage": "A00", "message": "Plan, protokol taslağı ve hash/atomik durum testleri doğrulanıyor."}
+{"time": "2026-10-11T10:06:21.181651+00:00", "type": "validated", "stage": "A00", "message": "Plan/protokol taslağı, atomik JSON, olay günlüğü, artefakt hash ve kesinti testleri geçti."}
+{"time": "2026-10-11T10:06:21.287019+00:00", "type": "started", "stage": "A02", "message": "Drug-only retrieval ve group/paired bootstrap kabul testleri çalışıyor."}
+{"time": "2026-10-11T10:06:41.248704+00:00", "type": "failed", "stage": "A02", "message": "[WinError 1114] Devingen bağlantı kitaplığını (DLL) başlatma işlemi başarısız. Error loading \"C:\\Users\\mkalb\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\torch\\lib\\c10.dll\" or one of its dependencies."}
+{"time": "2026-10-11T10:07:58.478725+00:00", "type": "initialized", "stage": null, "message": "Akademik plan ve devam kayıtları hazır."}
+{"time": "2026-10-11T10:07:58.491674+00:00", "type": "started", "stage": "A00", "message": "Plan, protokol taslağı ve hash/atomik durum testleri doğrulanıyor."}
+{"time": "2026-10-11T10:08:06.842680+00:00", "type": "validated", "stage": "A00", "message": "Plan/protokol taslağı, atomik JSON, olay günlüğü, artefakt hash ve kesinti testleri geçti."}
+{"time": "2026-10-11T10:08:06.934494+00:00", "type": "started", "stage": "A02", "message": "Drug-only retrieval ve group/paired bootstrap kabul testleri çalışıyor."}
+{"time": "2026-10-11T10:08:29.147877+00:00", "type": "validated", "stage": "A02", "message": "Drug-only filtered MRR, canonical hedef tekilleştirme, analytic random baseline, scaffold/paired bootstrap testleri geçti; legacy validation adapter çalıştı."}
+{"time": "2026-10-11T10:09:12.576216+00:00", "type": "started", "stage": "A03", "message": "v2 kimyasal bileşenler ve tam uygun KG split kanıtları doğrulanıyor."}
+{"time": "2026-10-11T10:09:12.867455+00:00", "type": "validated", "stage": "A03", "message": "7729 molekül, altı kimlikte overlap=0; 47130 entity/3757160 triple; coverage tam. Ayna sürümü/lisans sınırlılığı açık."}
+{"time": "2026-10-11T10:09:13.390734+00:00", "type": "started", "stage": "A04", "message": "Gerçek CUDA pilotu ve eğitim/test ayrımı testleri kaydediliyor."}
+{"time": "2026-10-11T10:09:13.909109+00:00", "type": "validated", "stage": "A04", "message": "3050 Ti CUDA pilotu başarılı; KGE üst bütçe yaklaşık 464 saat. MLP/KGE checkpoint ve test kapısı test edildi."}
+{"time": "2026-10-11T10:09:14.848011+00:00", "type": "started", "stage": "A05", "message": "Kod/veri/ayar/bilimsel paket kilidi doğrulanıyor."}
+{"time": "2026-10-11T10:09:15.583604+00:00", "type": "validated", "stage": "A05", "message": "v2 protokol kilitli. Ayrı final komutu ve seçilmiş ağırlık hash kaydı etkin; akademik test henüz açılmadı."}
+{"time": "2026-10-11T10:09:16.616287+00:00", "type": "started", "stage": "A06", "message": "Beş seed toksisite model ve kalibrasyon kayıtları doğrulanıyor."}
+{"time": "2026-10-11T10:09:17.671628+00:00", "type": "validated", "stage": "A06", "message": "17/29/43/71/101 seed; prevalence, Logistic Regression, XGBoost, MLP ve ayrı grup kalibrasyonu tamam. Final test açılmadı."}
+{"time": "2026-10-11T10:09:18.825725+00:00", "type": "note", "stage": null, "message": "11 Ekim 2026: Kullanıcı 3050 Ti sağladı; uzun KGE eğitimi için başka makine kullanabilecek. Tam arama yerelde başlatılmadı. Paket/komutlar docs/academic/REMOTE_TRAINING.md içinde. A07–A10 ve tam kimyasal eşleme/entegrasyon henüz tamamlanmadı."}

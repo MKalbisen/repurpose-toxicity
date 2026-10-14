@@ -1,0 +1,40 @@
+{
+  "profile": "smoke",
+  "seed": 42,
+  "device": "cpu",
+  "kg": {
+    "max_entities": 250,
+    "max_triples": 1800,
+    "epochs": 5,
+    "batch_size": 128,
+    "dimensions": [
+      32
+    ],
+    "learning_rates": [
+      0.005
+    ],
+    "relations": [
+      "indication"
+    ]
+  },
+  "toxicity": {
+    "xgb_estimators": [
+      35,
+      60
+    ],
+    "xgb_depths": [
+      3
+    ],
+    "mlp_epochs": 5,
+    "batch_size": 256,
+    "bootstrap": 40
+  },
+  "mapping": {
+    "limit": 50
+  },
+  "ranking": {
+    "threshold": 0.5,
+    "weight": 0.7,
+    "top_n": 30
+  }
+}

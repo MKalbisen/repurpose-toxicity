@@ -1,0 +1,90 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.13223820647528,
+      "validation_macro_auc": 0.7242814619697797
+    },
+    {
+      "epoch": 2,
+      "loss": 0.7920181363127953,
+      "validation_macro_auc": 0.7276797888597305
+    },
+    {
+      "epoch": 3,
+      "loss": 0.5869054149749667,
+      "validation_macro_auc": 0.720338002552135
+    },
+    {
+      "epoch": 4,
+      "loss": 0.45314557885014733,
+      "validation_macro_auc": 0.7209897924683775
+    },
+    {
+      "epoch": 5,
+      "loss": 0.36753503804983095,
+      "validation_macro_auc": 0.71827833897686
+    },
+    {
+      "epoch": 6,
+      "loss": 0.30780334770679474,
+      "validation_macro_auc": 0.6960242442806153
+    },
+    {
+      "epoch": 7,
+      "loss": 0.2645862681228061,
+      "validation_macro_auc": 0.7010621687775527
+    },
+    {
+      "epoch": 8,
+      "loss": 0.23336487765922104,
+      "validation_macro_auc": 0.7049376818517632
+    },
+    {
+      "epoch": 9,
+      "loss": 0.2099739233421725,
+      "validation_macro_auc": 0.6874836432138213
+    },
+    {
+      "epoch": 10,
+      "loss": 0.18485804058091584,
+      "validation_macro_auc": 0.6939263354188837
+    },
+    {
+      "epoch": 11,
+      "loss": 0.17188280249057813,
+      "validation_macro_auc": 0.6899396050196369
+    },
+    {
+      "epoch": 12,
+      "loss": 0.15522450052721556,
+      "validation_macro_auc": 0.6896391001179426
+    },
+    {
+      "epoch": 13,
+      "loss": 0.1462479166166727,
+      "validation_macro_auc": 0.6919860457589212
+    },
+    {
+      "epoch": 14,
+      "loss": 0.14291579744150473,
+      "validation_macro_auc": 0.6905765096560791
+    },
+    {
+      "epoch": 15,
+      "loss": 0.14489560453004616,
+      "validation_macro_auc": 0.6933834271675646
+    },
+    {
+      "epoch": 16,
+      "loss": 0.1441610119370527,
+      "validation_macro_auc": 0.686893636110849
+    },
+    {
+      "epoch": 17,
+      "loss": 0.1269931969947593,
+      "validation_macro_auc": 0.6749835414795796
+    }
+  ],
+  "seconds_this_invocation": 9.703492900000128
+}

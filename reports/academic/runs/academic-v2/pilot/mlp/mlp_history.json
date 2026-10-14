@@ -1,0 +1,15 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.1109790441601775,
+      "validation_macro_auc": 0.729447643014688
+    },
+    {
+      "epoch": 2,
+      "loss": 0.7750650283902191,
+      "validation_macro_auc": 0.7309705185723026
+    }
+  ],
+  "seconds_this_invocation": 0.9062020999999731
+}

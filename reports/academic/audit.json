@@ -1,0 +1,745 @@
+{
+  "created": "2026-10-08T12:23:43.248188+00:00",
+  "scope": "MVP readiness audit; no new model final-test scores",
+  "hardware": {
+    "platform": "Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "logical_cpus": 32,
+    "cuda_available": false,
+    "ram_note": "Host free -h inspection: about 31 GiB total; availability varies."
+  },
+  "data_origin": "pinned_community_mirror",
+  "primekg_version": "mirror commit 03de2c6613831c66203fb8af8ac7f3fdae6b1887; official version unverified",
+  "kg": {
+    "entities": 231,
+    "entity_types": {
+      "disease": 83,
+      "gene/protein": 77,
+      "drug": 50,
+      "pathway": 21
+    },
+    "triples": 1800,
+    "relations": {
+      "indication": 900,
+      "drug_drug": 450,
+      "drug_protein": 164,
+      "disease_protein": 143,
+      "pathway_protein": 55,
+      "off-label use": 39,
+      "disease_disease": 24,
+      "contraindication": 14,
+      "protein_protein": 11
+    },
+    "split_sizes": {
+      "train": 1440,
+      "validation": 180,
+      "test": 180
+    },
+    "checks": {
+      "train_validation_pair_overlap": 0,
+      "train_validation_exact_overlap": 0,
+      "train_test_pair_overlap": 0,
+      "train_test_exact_overlap": 0,
+      "validation_test_pair_overlap": 0,
+      "validation_test_exact_overlap": 0,
+      "validation_unseen_entities": 0,
+      "validation_unseen_relations": 0,
+      "test_unseen_entities": 0,
+      "test_unseen_relations": 0,
+      "partition_unique_triples_complete": true
+    },
+    "target_indication": {
+      "train": {
+        "indication_rows": 724,
+        "unique_drug_disease_pairs": 567,
+        "directions": {
+          "disease_to_drug": 366,
+          "drug_to_disease": 358
+        },
+        "unique_target_diseases": 83
+      },
+      "validation": {
+        "indication_rows": 91,
+        "unique_drug_disease_pairs": 75,
+        "directions": {
+          "disease_to_drug": 49,
+          "drug_to_disease": 42
+        },
+        "unique_target_diseases": 49
+      },
+      "test": {
+        "indication_rows": 85,
+        "unique_drug_disease_pairs": 64,
+        "directions": {
+          "drug_to_disease": 40,
+          "disease_to_drug": 45
+        },
+        "unique_target_diseases": 41
+      }
+    },
+    "mapping": {
+      "drug_count": 50,
+      "matched_drugs": 36,
+      "coverage": 0.72,
+      "duplicate_drug_mappings": 0
+    }
+  },
+  "toxicity": {
+    "molecules": 7822,
+    "feature_shape": [
+      7822,
+      1024
+    ],
+    "missing_labels": 16012,
+    "checks": {
+      "feature_shape_matches": true,
+      "label_shape_matches": true,
+      "binary_features": true,
+      "binary_or_missing_labels": true,
+      "split_covers_every_row_once": true,
+      "npz_labels_match_csv": true
+    },
+    "cross_split_equivalent_groups": {
+      "canonical_smiles": 0,
+      "scaffold": 0,
+      "fingerprint": 11
+    },
+    "scaffold_distribution": {
+      "train": {
+        "n": 6258,
+        "groups": 947,
+        "largest_group": 1780,
+        "acyclic_count": 1780
+      },
+      "val": {
+        "n": 782,
+        "groups": 674,
+        "largest_group": 3,
+        "acyclic_count": 0
+      },
+      "test": {
+        "n": 782,
+        "groups": 674,
+        "largest_group": 3,
+        "acyclic_count": 0
+      }
+    },
+    "label_distribution": [
+      {
+        "split": "train",
+        "assay": "NR-AR",
+        "n_labeled": 5837,
+        "positive": 236,
+        "negative": 5601,
+        "missing": 421,
+        "prevalence": 0.04043172862771972
+      },
+      {
+        "split": "train",
+        "assay": "NR-AR-LBD",
+        "n_labeled": 5491,
+        "positive": 184,
+        "negative": 5307,
+        "missing": 767,
+        "prevalence": 0.03350937898379166
+      },
+      {
+        "split": "train",
+        "assay": "NR-AhR",
+        "n_labeled": 5309,
+        "positive": 570,
+        "negative": 4739,
+        "missing": 949,
+        "prevalence": 0.10736485213787908
+      },
+      {
+        "split": "train",
+        "assay": "NR-Aromatase",
+        "n_labeled": 4786,
+        "positive": 196,
+        "negative": 4590,
+        "missing": 1472,
+        "prevalence": 0.040952778938570834
+      },
+      {
+        "split": "train",
+        "assay": "NR-ER",
+        "n_labeled": 5077,
+        "positive": 636,
+        "negative": 4441,
+        "missing": 1181,
+        "prevalence": 0.12527082922986016
+      },
+      {
+        "split": "train",
+        "assay": "NR-ER-LBD",
+        "n_labeled": 5623,
+        "positive": 287,
+        "negative": 5336,
+        "missing": 635,
+        "prevalence": 0.05104036990930109
+      },
+      {
+        "split": "train",
+        "assay": "NR-PPAR-gamma",
+        "n_labeled": 5286,
+        "positive": 132,
+        "negative": 5154,
+        "missing": 972,
+        "prevalence": 0.024971623155505107
+      },
+      {
+        "split": "train",
+        "assay": "SR-ARE",
+        "n_labeled": 4839,
+        "positive": 712,
+        "negative": 4127,
+        "missing": 1419,
+        "prevalence": 0.14713783839636288
+      },
+      {
+        "split": "train",
+        "assay": "SR-ATAD5",
+        "n_labeled": 5724,
+        "positive": 196,
+        "negative": 5528,
+        "missing": 534,
+        "prevalence": 0.03424178895877009
+      },
+      {
+        "split": "train",
+        "assay": "SR-HSE",
+        "n_labeled": 5283,
+        "positive": 285,
+        "negative": 4998,
+        "missing": 975,
+        "prevalence": 0.05394662123793299
+      },
+      {
+        "split": "train",
+        "assay": "SR-MMP",
+        "n_labeled": 4776,
+        "positive": 697,
+        "negative": 4079,
+        "missing": 1482,
+        "prevalence": 0.14593802345058626
+      },
+      {
+        "split": "train",
+        "assay": "SR-p53",
+        "n_labeled": 5489,
+        "positive": 291,
+        "negative": 5198,
+        "missing": 769,
+        "prevalence": 0.053015121151393695
+      },
+      {
+        "split": "val",
+        "assay": "NR-AR",
+        "n_labeled": 700,
+        "positive": 40,
+        "negative": 660,
+        "missing": 82,
+        "prevalence": 0.05714285714285714
+      },
+      {
+        "split": "val",
+        "assay": "NR-AR-LBD",
+        "n_labeled": 621,
+        "positive": 30,
+        "negative": 591,
+        "missing": 161,
+        "prevalence": 0.04830917874396135
+      },
+      {
+        "split": "val",
+        "assay": "NR-AhR",
+        "n_labeled": 606,
+        "positive": 103,
+        "negative": 503,
+        "missing": 176,
+        "prevalence": 0.16996699669966997
+      },
+      {
+        "split": "val",
+        "assay": "NR-Aromatase",
+        "n_labeled": 507,
+        "positive": 53,
+        "negative": 454,
+        "missing": 275,
+        "prevalence": 0.10453648915187377
+      },
+      {
+        "split": "val",
+        "assay": "NR-ER",
+        "n_labeled": 537,
+        "positive": 79,
+        "negative": 458,
+        "missing": 245,
+        "prevalence": 0.14711359404096835
+      },
+      {
+        "split": "val",
+        "assay": "NR-ER-LBD",
+        "n_labeled": 648,
+        "positive": 30,
+        "negative": 618,
+        "missing": 134,
+        "prevalence": 0.046296296296296294
+      },
+      {
+        "split": "val",
+        "assay": "NR-PPAR-gamma",
+        "n_labeled": 566,
+        "positive": 24,
+        "negative": 542,
+        "missing": 216,
+        "prevalence": 0.04240282685512368
+      },
+      {
+        "split": "val",
+        "assay": "SR-ARE",
+        "n_labeled": 496,
+        "positive": 123,
+        "negative": 373,
+        "missing": 286,
+        "prevalence": 0.24798387096774194
+      },
+      {
+        "split": "val",
+        "assay": "SR-ATAD5",
+        "n_labeled": 661,
+        "positive": 35,
+        "negative": 626,
+        "missing": 121,
+        "prevalence": 0.0529500756429652
+      },
+      {
+        "split": "val",
+        "assay": "SR-HSE",
+        "n_labeled": 579,
+        "positive": 33,
+        "negative": 546,
+        "missing": 203,
+        "prevalence": 0.05699481865284974
+      },
+      {
+        "split": "val",
+        "assay": "SR-MMP",
+        "n_labeled": 513,
+        "positive": 107,
+        "negative": 406,
+        "missing": 269,
+        "prevalence": 0.20857699805068225
+      },
+      {
+        "split": "val",
+        "assay": "SR-p53",
+        "n_labeled": 638,
+        "positive": 72,
+        "negative": 566,
+        "missing": 144,
+        "prevalence": 0.11285266457680251
+      },
+      {
+        "split": "test",
+        "assay": "NR-AR",
+        "n_labeled": 720,
+        "positive": 32,
+        "negative": 688,
+        "missing": 62,
+        "prevalence": 0.044444444444444446
+      },
+      {
+        "split": "test",
+        "assay": "NR-AR-LBD",
+        "n_labeled": 638,
+        "positive": 23,
+        "negative": 615,
+        "missing": 144,
+        "prevalence": 0.03605015673981191
+      },
+      {
+        "split": "test",
+        "assay": "NR-AhR",
+        "n_labeled": 626,
+        "positive": 95,
+        "negative": 531,
+        "missing": 156,
+        "prevalence": 0.15175718849840256
+      },
+      {
+        "split": "test",
+        "assay": "NR-Aromatase",
+        "n_labeled": 521,
+        "positive": 51,
+        "negative": 470,
+        "missing": 261,
+        "prevalence": 0.09788867562380038
+      },
+      {
+        "split": "test",
+        "assay": "NR-ER",
+        "n_labeled": 571,
+        "positive": 76,
+        "negative": 495,
+        "missing": 211,
+        "prevalence": 0.1330998248686515
+      },
+      {
+        "split": "test",
+        "assay": "NR-ER-LBD",
+        "n_labeled": 676,
+        "positive": 32,
+        "negative": 644,
+        "missing": 106,
+        "prevalence": 0.047337278106508875
+      },
+      {
+        "split": "test",
+        "assay": "NR-PPAR-gamma",
+        "n_labeled": 590,
+        "positive": 30,
+        "negative": 560,
+        "missing": 192,
+        "prevalence": 0.05084745762711865
+      },
+      {
+        "split": "test",
+        "assay": "SR-ARE",
+        "n_labeled": 489,
+        "positive": 107,
+        "negative": 382,
+        "missing": 293,
+        "prevalence": 0.21881390593047034
+      },
+      {
+        "split": "test",
+        "assay": "SR-ATAD5",
+        "n_labeled": 679,
+        "positive": 33,
+        "negative": 646,
+        "missing": 103,
+        "prevalence": 0.048600883652430045
+      },
+      {
+        "split": "test",
+        "assay": "SR-HSE",
+        "n_labeled": 597,
+        "positive": 54,
+        "negative": 543,
+        "missing": 185,
+        "prevalence": 0.09045226130653267
+      },
+      {
+        "split": "test",
+        "assay": "SR-MMP",
+        "n_labeled": 514,
+        "positive": 114,
+        "negative": 400,
+        "missing": 268,
+        "prevalence": 0.22178988326848248
+      },
+      {
+        "split": "test",
+        "assay": "SR-p53",
+        "n_labeled": 639,
+        "positive": 60,
+        "negative": 579,
+        "missing": 143,
+        "prevalence": 0.09389671361502347
+      }
+    ],
+    "canonical_duplicate_rows": 0,
+    "fingerprint_duplicate_rows": 386
+  },
+  "findings": [
+    {
+      "id": "F01",
+      "priority": "critical",
+      "next_stage": "A02",
+      "finding": "Legacy KGE selection/evaluation uses all relations and all entity types; primary drug-only indication metric missing."
+    },
+    {
+      "id": "F02",
+      "priority": "critical",
+      "next_stage": "A04",
+      "finding": "Legacy training automatically evaluates test after each run; separate train/select/final-evaluate gate required."
+    },
+    {
+      "id": "F03",
+      "priority": "high",
+      "next_stage": "A03",
+      "finding": "Smoke subgraph selection favors high-degree drugs and input file order; cannot be the general academic cohort."
+    },
+    {
+      "id": "F04",
+      "priority": "high",
+      "next_stage": "A02",
+      "finding": "Legacy confidence intervals resample individual molecules; group and paired uncertainty missing."
+    },
+    {
+      "id": "F05",
+      "priority": "high",
+      "next_stage": "A03",
+      "finding": "Tautomer enumeration completion/identity audit absent; rejected molecule and limit handling must be versioned."
+    },
+    {
+      "id": "F06",
+      "priority": "high",
+      "next_stage": "A03",
+      "finding": "Mirror is hash-verified but official version/provenance/license equivalence remains unverified."
+    },
+    {
+      "id": "F07",
+      "priority": "high",
+      "next_stage": "A04",
+      "finding": "Legacy paths key on profile only, model artifacts overwrite, optimizer/RNG epoch resume absent."
+    },
+    {
+      "id": "F08",
+      "priority": "high",
+      "next_stage": "A06",
+      "finding": "Only one short training seed; classical baselines, grouped calibration and fixed task denominator comparison absent."
+    },
+    {
+      "id": "F09",
+      "priority": "high",
+      "next_stage": "A09",
+      "finding": "No independent external validation. Previous smoke test exposure must be disclosed."
+    },
+    {
+      "id": "F10",
+      "priority": "medium",
+      "next_stage": "A03",
+      "finding": "No nearest-training chemistry similarity audit; zero scaffold overlap alone does not demonstrate independence."
+    },
+    {
+      "id": "F11",
+      "priority": "medium",
+      "next_stage": "A04",
+      "finding": "Full KG splitting constructs Python groups and loops over dataframe groups; scalability must be measured before full run."
+    },
+    {
+      "id": "F12",
+      "priority": "critical",
+      "next_stage": "A03",
+      "finding": "Equivalent chemistry/model inputs cross split boundaries; fix before academic training."
+    }
+  ],
+  "input_fingerprints": [
+    {
+      "path": "configs/academic_protocol.yaml",
+      "sha256": "5782f48057cea6724b8e0a58336ff626fdf3e94f0134cc7918f48f4435794bd0",
+      "bytes": 1393
+    },
+    {
+      "path": "data/processed/smoke/drug_chemical_mapping.csv",
+      "sha256": "65a07f8fa47da56c85e02b17b58d2ab19c4b355badabd4e26710325d6a8353c2",
+      "bytes": 13127
+    },
+    {
+      "path": "data/processed/smoke/entities.csv",
+      "sha256": "f56411d3bb9a01ab092bb5ade38336c03a80e77e9610933c3a4371f99c1ddc6e",
+      "bytes": 12029
+    },
+    {
+      "path": "data/processed/smoke/test.tsv",
+      "sha256": "0a1f83301b0a2df3b8f0ea468294f0dd1f04376b5709ce65e2daf860caf274bc",
+      "bytes": 7317
+    },
+    {
+      "path": "data/processed/smoke/tox21_clean.csv",
+      "sha256": "bf04cd907197342616e0a046aebd2fe1ab90f635a37ab9ee9e93e32d5cdc4b30",
+      "bytes": 1072108
+    },
+    {
+      "path": "data/processed/smoke/tox21_features.npz",
+      "sha256": "2bf17e23cfff0961d77c6d96740ffca4e8d42990f43d7c65c70cb7748ff43bd5",
+      "bytes": 343445
+    },
+    {
+      "path": "data/processed/smoke/train.tsv",
+      "sha256": "9ed5e9b964022997828d810ffd5bc5de689d270488cb376dabf185a926b5a13f",
+      "bytes": 61211
+    },
+    {
+      "path": "data/processed/smoke/triples.tsv",
+      "sha256": "4c1c4f80a3639d954956b530b275f04423129d2f3ea6018c9b51a4b88ed39dfe",
+      "bytes": 75920
+    },
+    {
+      "path": "data/processed/smoke/validation.tsv",
+      "sha256": "595267e695ddbeb121723cfff781f8759ac404712106cb754b935615a53682e7",
+      "bytes": 7392
+    },
+    {
+      "path": "reports/data_manifest.json",
+      "sha256": "3a1328c47832b2f03a3d92639160272753dd096ae2f2a106f0514e3d3a8d33ad",
+      "bytes": 1108
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "083ded11a2db7915a0d7707bdfc13a727c7442ecb9af43a3fb6d8daf0063d2dd",
+      "bytes": 3105
+    },
+    {
+      "path": "src/repurpose/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/repurpose/academic/__init__.py",
+      "sha256": "6cbefbbfc888cdd6c371fb7c84f5708cdd92a80dd53cad018decdc70b23ffa28",
+      "bytes": 60
+    },
+    {
+      "path": "src/repurpose/academic/audit.py",
+      "sha256": "011f0b70ba2b8b611fac341c13eb51dbc06a21504b099e12bd67f9e02dba07de",
+      "bytes": 13281
+    },
+    {
+      "path": "src/repurpose/academic/cli.py",
+      "sha256": "eb9900f5f2dfa156d37e4afe57d8ef920617a3de63f450fd15f7620bccfbec9c",
+      "bytes": 6966
+    },
+    {
+      "path": "src/repurpose/academic/diagnostic.py",
+      "sha256": "56d19dfcda1a8c3ec04fd88b9614045ae8779076d334d3253894e0a70b703690",
+      "bytes": 2531
+    },
+    {
+      "path": "src/repurpose/academic/metrics.py",
+      "sha256": "dd8b9caef6221b9d8feb915195691eb2c2fb6b253768cb8d9a299ebd58f00efb",
+      "bytes": 10302
+    },
+    {
+      "path": "src/repurpose/academic/state.py",
+      "sha256": "13a8981330d7024da8b146eb96b14fa30e4c01c76d0b2cdd2af590787cbd10da",
+      "bytes": 10045
+    },
+    {
+      "path": "src/repurpose/cli.py",
+      "sha256": "ea4ca98380bcd2debccd2f183436acd8f769b229ef6e12c5e5e286689d183d1b",
+      "bytes": 3525
+    },
+    {
+      "path": "src/repurpose/data/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/repurpose/data/chemistry.py",
+      "sha256": "916ec446d135396ed196b9c1aa2a83551db097006452368dc6a5c0eb50773552",
+      "bytes": 1988
+    },
+    {
+      "path": "src/repurpose/data/download.py",
+      "sha256": "6e8baf74d1d4506fec33439212414491fa3718cffb37d4253c42e8ad385b11e1",
+      "bytes": 3805
+    },
+    {
+      "path": "src/repurpose/data/kg_data.py",
+      "sha256": "6464baf8e1463fc2ffeadba1172bf618c3ff10a03b3c2194e57c06dfa9aff41a",
+      "bytes": 8638
+    },
+    {
+      "path": "src/repurpose/data/mapping.py",
+      "sha256": "42e9b4468fd41c1199e9af393052598dbcb5003733ad85a5459a7ea3372e2e43",
+      "bytes": 5754
+    },
+    {
+      "path": "src/repurpose/data/tox21.py",
+      "sha256": "fd3f97ff631be8ceae9637a349a22fb9a5aaa4d02b0d0c0a2174b6715ffb58de",
+      "bytes": 4872
+    },
+    {
+      "path": "src/repurpose/integration/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/repurpose/integration/inference_pipeline.py",
+      "sha256": "3ec61e8341442448faf53b4a9c9d5c05e78a747ab66e6ee1a3d02b540946bea5",
+      "bytes": 4573
+    },
+    {
+      "path": "src/repurpose/integration/ranking.py",
+      "sha256": "eb4758650fc8948a793e681f9e48b7db37315b5ecb40becf4aa23e741cae092e",
+      "bytes": 3018
+    },
+    {
+      "path": "src/repurpose/kg/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/repurpose/kg/candidate_generator.py",
+      "sha256": "423af0a80fe339cd8e3d3c59de7bf0ddc9cf35ec7aa5becda55c92315e23f8d6",
+      "bytes": 1658
+    },
+    {
+      "path": "src/repurpose/kg/train.py",
+      "sha256": "78a76c8a6db30db0b48419ef152cdd1ecda12440c8cc2a13da08a0b991c4977f",
+      "bytes": 4929
+    },
+    {
+      "path": "src/repurpose/reporting.py",
+      "sha256": "b97ecd1c2c817a55552325df19b9f3d55fc13ebfee6fdb5b3e3afb304ba7c86c",
+      "bytes": 7561
+    },
+    {
+      "path": "src/repurpose/toxicity/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/repurpose/toxicity/evaluate.py",
+      "sha256": "6f0bc0f67325f40b0bc57b174b94a9c44dc613edf259ae67e6f98b3ee9368a08",
+      "bytes": 2461
+    },
+    {
+      "path": "src/repurpose/toxicity/models.py",
+      "sha256": "ac3573fae76c773614bda326f76aa779dde58f2119d6f638cd71d8f3f4ce70a2",
+      "bytes": 810
+    },
+    {
+      "path": "src/repurpose/toxicity/train.py",
+      "sha256": "5b6aca4704fd394fa9f52b04d4d2a0744d564e1fa3edddbb29134d2d60da0bb9",
+      "bytes": 7685
+    },
+    {
+      "path": "src/repurpose/utils.py",
+      "sha256": "65166e8015b08db15b72af0ec4c43cce656c34ad64476720dba811cabc1e4e52",
+      "bytes": 2114
+    },
+    {
+      "path": "src/repurpose/visualization/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "src/repurpose/visualization/graph_builder.py",
+      "sha256": "205ef92bcefead1c37c871bc3da0b198f18872db4ff86c480855e5391e9ae3e8",
+      "bytes": 2726
+    },
+    {
+      "path": "src/repurpose/visualization/molecule_view.py",
+      "sha256": "31729d7775c0b3b1df5d3e1b6a9fb7f85ad21d59baec71050b1a5b726af97777",
+      "bytes": 1210
+    },
+    {
+      "path": "src/repurpose/visualization/xai.py",
+      "sha256": "5a0c3f7a9b493aab43f7c8bd7458b687e969b694eb6ea23f5b62e6326982943e",
+      "bytes": 1426
+    }
+  ],
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "2.3.3",
+    "torch": "2.6.0+cpu",
+    "pykeen": "1.11.1",
+    "rdkit": "2026.3.6",
+    "scikit-learn": "1.9.1",
+    "xgboost": "3.2.0"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "time": "2026-10-11T10:08:29.026672+00:00",
+  "scope": "retrospective legacy smoke validation diagnostic; NOT academic final test",
+  "model": "RotatE",
+  "filter_scope": "train + validation; test triples not loaded",
+  "model_metrics": {
+    "MRR": 0.17393856501581004,
+    "disease_macro_MRR": 0.19341442447896603,
+    "target_pair_count": 75,
+    "disease_count": 49,
+    "candidate_type": "drug_only",
+    "filtered": true,
+    "tie_policy": "midrank MRR/Hits (not expected reciprocal rank); expected random-tie unfiltered Recall@K",
+    "random_expected_MRR": 0.10141452206629435,
+    "Hits@1": 0.06666666666666667,
+    "unfiltered_target_Recall@1": 0.027210884353741496,
+    "Hits@3": 0.16,
+    "unfiltered_target_Recall@3": 0.11564625850340135,
+    "Hits@10": 0.36,
+    "unfiltered_target_Recall@10": 0.29931972789115646
+  },
+  "train_popularity_metrics": {
+    "MRR": 0.22146563812956904,
+    "disease_macro_MRR": 0.21748543127975628,
+    "target_pair_count": 75,
+    "disease_count": 49,
+    "candidate_type": "drug_only",
+    "filtered": true,
+    "tie_policy": "midrank MRR/Hits (not expected reciprocal rank); expected random-tie unfiltered Recall@K",
+    "random_expected_MRR": 0.10141452206629435,
+    "Hits@1": 0.08,
+    "unfiltered_target_Recall@1": 0.061224489795918366,
+    "Hits@3": 0.25333333333333335,
+    "unfiltered_target_Recall@3": 0.11734693877551021,
+    "Hits@10": 0.4666666666666667,
+    "unfiltered_target_Recall@10": 0.3333333333333333
+  },
+  "limitations": [
+    "Smoke model was selected using legacy all-relation validation metrics.",
+    "This diagnostic does not retrospectively change training or model selection.",
+    "Previous smoke test exposure exists; no independent-test claim."
+  ]
+}

@@ -1,0 +1,23 @@
+profile: full
+seed: 42
+device: cpu
+kg:
+  max_entities: null
+  max_triples: null
+  epochs: 200
+  batch_size: 1024
+  dimensions: [100, 200]
+  learning_rates: [0.001, 0.01]
+  relations: [indication]
+toxicity:
+  xgb_estimators: [200, 500]
+  xgb_depths: [3, 6]
+  mlp_epochs: 150
+  batch_size: 256
+  bootstrap: 1000
+mapping:
+  limit: null
+ranking:
+  threshold: 0.5
+  weight: 0.7
+  top_n: 100

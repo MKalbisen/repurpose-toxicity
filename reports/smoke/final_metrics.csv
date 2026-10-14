@@ -1,0 +1,153 @@
+domain,model,task,split,metric,value
+KG,TransE,all_relations,test,MRR,0.0196592640131711
+KG,TransE,all_relations,test,Hits@1,0.0
+KG,TransE,all_relations,test,Hits@3,0.0055555555555555
+KG,TransE,all_relations,test,Hits@10,0.0305555555555555
+KG,RotatE,all_relations,test,MRR,0.0846078842878341
+KG,RotatE,all_relations,test,Hits@1,0.0277777777777777
+KG,RotatE,all_relations,test,Hits@3,0.0583333333333333
+KG,RotatE,all_relations,test,Hits@10,0.1777777777777777
+toxicity,XGBoost,NR-AR,test,ROC-AUC,0.8402979651162791
+toxicity,XGBoost,NR-AR,test,PR-AUC,0.5206154594279744
+toxicity,XGBoost,NR-AR,test,Precision,0.1649484536082474
+toxicity,XGBoost,NR-AR,test,Recall,0.5
+toxicity,XGBoost,NR-AR,test,F1,0.2480620155038759
+toxicity,XGBoost,NR-AR,test,Balanced Accuracy,0.6911337209302326
+toxicity,XGBoost,NR-AR-LBD,test,ROC-AUC,0.8429833863556027
+toxicity,XGBoost,NR-AR-LBD,test,PR-AUC,0.3837241312663092
+toxicity,XGBoost,NR-AR-LBD,test,Precision,0.2068965517241379
+toxicity,XGBoost,NR-AR-LBD,test,Recall,0.5217391304347826
+toxicity,XGBoost,NR-AR-LBD,test,F1,0.2962962962962963
+toxicity,XGBoost,NR-AR-LBD,test,Balanced Accuracy,0.7234711912336514
+toxicity,XGBoost,NR-AhR,test,ROC-AUC,0.7803746654772524
+toxicity,XGBoost,NR-AhR,test,PR-AUC,0.4082059055835363
+toxicity,XGBoost,NR-AhR,test,Precision,0.2401215805471124
+toxicity,XGBoost,NR-AhR,test,Recall,0.8315789473684211
+toxicity,XGBoost,NR-AhR,test,F1,0.3726415094339622
+toxicity,XGBoost,NR-AhR,test,Balanced Accuracy,0.6803845772623649
+toxicity,XGBoost,NR-Aromatase,test,ROC-AUC,0.6471839799749687
+toxicity,XGBoost,NR-Aromatase,test,PR-AUC,0.248073553535115
+toxicity,XGBoost,NR-Aromatase,test,Precision,0.1566265060240964
+toxicity,XGBoost,NR-Aromatase,test,Recall,0.5098039215686274
+toxicity,XGBoost,NR-Aromatase,test,F1,0.2396313364055299
+toxicity,XGBoost,NR-Aromatase,test,Balanced Accuracy,0.6059657905715478
+toxicity,XGBoost,NR-ER,test,ROC-AUC,0.6034954811270601
+toxicity,XGBoost,NR-ER,test,PR-AUC,0.2768190023662545
+toxicity,XGBoost,NR-ER,test,Precision,0.1823204419889502
+toxicity,XGBoost,NR-ER,test,Recall,0.4342105263157895
+toxicity,XGBoost,NR-ER,test,F1,0.2568093385214007
+toxicity,XGBoost,NR-ER,test,Balanced Accuracy,0.5676103136629452
+toxicity,XGBoost,NR-ER-LBD,test,ROC-AUC,0.6493837344720497
+toxicity,XGBoost,NR-ER-LBD,test,PR-AUC,0.3477448421178385
+toxicity,XGBoost,NR-ER-LBD,test,Precision,0.1447368421052631
+toxicity,XGBoost,NR-ER-LBD,test,Recall,0.34375
+toxicity,XGBoost,NR-ER-LBD,test,F1,0.2037037037037037
+toxicity,XGBoost,NR-ER-LBD,test,Balanced Accuracy,0.6214091614906831
+toxicity,XGBoost,NR-PPAR-gamma,test,ROC-AUC,0.6669940476190477
+toxicity,XGBoost,NR-PPAR-gamma,test,PR-AUC,0.1210584852057914
+toxicity,XGBoost,NR-PPAR-gamma,test,Precision,0.1046511627906976
+toxicity,XGBoost,NR-PPAR-gamma,test,Recall,0.3
+toxicity,XGBoost,NR-PPAR-gamma,test,F1,0.1551724137931034
+toxicity,XGBoost,NR-PPAR-gamma,test,Balanced Accuracy,0.58125
+toxicity,XGBoost,SR-ARE,test,ROC-AUC,0.6825243431031952
+toxicity,XGBoost,SR-ARE,test,PR-AUC,0.3900181563722483
+toxicity,XGBoost,SR-ARE,test,Precision,0.2954545454545454
+toxicity,XGBoost,SR-ARE,test,Recall,0.7289719626168224
+toxicity,XGBoost,SR-ARE,test,F1,0.4204851752021563
+toxicity,XGBoost,SR-ARE,test,Balanced Accuracy,0.6210304839262122
+toxicity,XGBoost,SR-ATAD5,test,ROC-AUC,0.7324561403508771
+toxicity,XGBoost,SR-ATAD5,test,PR-AUC,0.136241317366893
+toxicity,XGBoost,SR-ATAD5,test,Precision,0.1288343558282208
+toxicity,XGBoost,SR-ATAD5,test,Recall,0.6363636363636364
+toxicity,XGBoost,SR-ATAD5,test,F1,0.2142857142857142
+toxicity,XGBoost,SR-ATAD5,test,Balanced Accuracy,0.7082746974387841
+toxicity,XGBoost,SR-HSE,test,ROC-AUC,0.6968146783984722
+toxicity,XGBoost,SR-HSE,test,PR-AUC,0.235446115240311
+toxicity,XGBoost,SR-HSE,test,Precision,0.2
+toxicity,XGBoost,SR-HSE,test,Recall,0.4259259259259259
+toxicity,XGBoost,SR-HSE,test,F1,0.272189349112426
+toxicity,XGBoost,SR-HSE,test,Balanced Accuracy,0.6282484141600164
+toxicity,XGBoost,SR-MMP,test,ROC-AUC,0.6874780701754386
+toxicity,XGBoost,SR-MMP,test,PR-AUC,0.37516618687789
+toxicity,XGBoost,SR-MMP,test,Precision,0.3465346534653465
+toxicity,XGBoost,SR-MMP,test,Recall,0.6140350877192983
+toxicity,XGBoost,SR-MMP,test,F1,0.4430379746835443
+toxicity,XGBoost,SR-MMP,test,Balanced Accuracy,0.6420175438596492
+toxicity,XGBoost,SR-p53,test,ROC-AUC,0.6455958549222798
+toxicity,XGBoost,SR-p53,test,PR-AUC,0.1713229951020404
+toxicity,XGBoost,SR-p53,test,Precision,0.145631067961165
+toxicity,XGBoost,SR-p53,test,Recall,0.5
+toxicity,XGBoost,SR-p53,test,F1,0.225563909774436
+toxicity,XGBoost,SR-p53,test,Balanced Accuracy,0.5980138169257341
+toxicity,MLP,NR-AR,test,ROC-AUC,0.7523164970930233
+toxicity,MLP,NR-AR,test,PR-AUC,0.5078348375569538
+toxicity,MLP,NR-AR,test,Precision,0.1328671328671328
+toxicity,MLP,NR-AR,test,Recall,0.59375
+toxicity,MLP,NR-AR,test,F1,0.2171428571428571
+toxicity,MLP,NR-AR,test,Balanced Accuracy,0.7067587209302326
+toxicity,MLP,NR-AR-LBD,test,ROC-AUC,0.865464828561329
+toxicity,MLP,NR-AR-LBD,test,PR-AUC,0.4142356854190746
+toxicity,MLP,NR-AR-LBD,test,Precision,0.25
+toxicity,MLP,NR-AR-LBD,test,Recall,0.6956521739130435
+toxicity,MLP,NR-AR-LBD,test,F1,0.367816091954023
+toxicity,MLP,NR-AR-LBD,test,Balanced Accuracy,0.8088016967126193
+toxicity,MLP,NR-AhR,test,ROC-AUC,0.8224997522053722
+toxicity,MLP,NR-AhR,test,PR-AUC,0.5217477819003362
+toxicity,MLP,NR-AhR,test,Precision,0.3363636363636363
+toxicity,MLP,NR-AhR,test,Recall,0.7789473684210526
+toxicity,MLP,NR-AhR,test,F1,0.4698412698412698
+toxicity,MLP,NR-AhR,test,Balanced Accuracy,0.7519972247001685
+toxicity,MLP,NR-Aromatase,test,ROC-AUC,0.7412390488110137
+toxicity,MLP,NR-Aromatase,test,PR-AUC,0.3065146021732524
+toxicity,MLP,NR-Aromatase,test,Precision,0.25
+toxicity,MLP,NR-Aromatase,test,Recall,0.6274509803921569
+toxicity,MLP,NR-Aromatase,test,F1,0.3575418994413408
+toxicity,MLP,NR-Aromatase,test,Balanced Accuracy,0.7115978306216104
+toxicity,MLP,NR-ER,test,ROC-AUC,0.6414141414141414
+toxicity,MLP,NR-ER,test,PR-AUC,0.300763624221019
+toxicity,MLP,NR-ER,test,Precision,0.2119565217391304
+toxicity,MLP,NR-ER,test,Recall,0.5131578947368421
+toxicity,MLP,NR-ER,test,F1,0.3
+toxicity,MLP,NR-ER,test,Balanced Accuracy,0.6101143009037746
+toxicity,MLP,NR-ER-LBD,test,ROC-AUC,0.6659064440993789
+toxicity,MLP,NR-ER-LBD,test,PR-AUC,0.2598904137622524
+toxicity,MLP,NR-ER-LBD,test,Precision,0.125
+toxicity,MLP,NR-ER-LBD,test,Recall,0.375
+toxicity,MLP,NR-ER-LBD,test,F1,0.1875
+toxicity,MLP,NR-ER-LBD,test,Balanced Accuracy,0.6222826086956521
+toxicity,MLP,NR-PPAR-gamma,test,ROC-AUC,0.7571428571428571
+toxicity,MLP,NR-PPAR-gamma,test,PR-AUC,0.170005273310766
+toxicity,MLP,NR-PPAR-gamma,test,Precision,0.1134020618556701
+toxicity,MLP,NR-PPAR-gamma,test,Recall,0.3666666666666666
+toxicity,MLP,NR-PPAR-gamma,test,F1,0.1732283464566929
+toxicity,MLP,NR-PPAR-gamma,test,Balanced Accuracy,0.606547619047619
+toxicity,MLP,SR-ARE,test,ROC-AUC,0.7491804080833783
+toxicity,MLP,SR-ARE,test,PR-AUC,0.4576812338505832
+toxicity,MLP,SR-ARE,test,Precision,0.3789473684210526
+toxicity,MLP,SR-ARE,test,Recall,0.6728971962616822
+toxicity,MLP,SR-ARE,test,F1,0.4848484848484848
+toxicity,MLP,SR-ARE,test,Balanced Accuracy,0.6819983363507364
+toxicity,MLP,SR-ATAD5,test,ROC-AUC,0.8009897738999906
+toxicity,MLP,SR-ATAD5,test,PR-AUC,0.259507958532277
+toxicity,MLP,SR-ATAD5,test,Precision,0.1608391608391608
+toxicity,MLP,SR-ATAD5,test,Recall,0.696969696969697
+toxicity,MLP,SR-ATAD5,test,F1,0.2613636363636363
+toxicity,MLP,SR-ATAD5,test,Balanced Accuracy,0.7556055915189042
+toxicity,MLP,SR-HSE,test,ROC-AUC,0.6894140918081987
+toxicity,MLP,SR-HSE,test,PR-AUC,0.2732471824668637
+toxicity,MLP,SR-HSE,test,Precision,0.2040816326530612
+toxicity,MLP,SR-HSE,test,Recall,0.3703703703703703
+toxicity,MLP,SR-HSE,test,F1,0.2631578947368421
+toxicity,MLP,SR-HSE,test,Balanced Accuracy,0.6133619807652957
+toxicity,MLP,SR-MMP,test,ROC-AUC,0.7628399122807017
+toxicity,MLP,SR-MMP,test,PR-AUC,0.4444047910033578
+toxicity,MLP,SR-MMP,test,Precision,0.4329268292682927
+toxicity,MLP,SR-MMP,test,Recall,0.6228070175438597
+toxicity,MLP,SR-MMP,test,F1,0.5107913669064749
+toxicity,MLP,SR-MMP,test,Balanced Accuracy,0.6951535087719298
+toxicity,MLP,SR-p53,test,ROC-AUC,0.6808578008059873
+toxicity,MLP,SR-p53,test,PR-AUC,0.2480801956234579
+toxicity,MLP,SR-p53,test,Precision,0.1729729729729729
+toxicity,MLP,SR-p53,test,Recall,0.5333333333333333
+toxicity,MLP,SR-p53,test,F1,0.2612244897959184
+toxicity,MLP,SR-p53,test,Balanced Accuracy,0.6345423143350604

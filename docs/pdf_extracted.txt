@@ -1,0 +1,488 @@
+
+--- SAYFA 1 ---
+İlaç Yeniden Konumlandırma & Toksisite Yol Haritası Sayfa 1 / 6  
+  
+             
+ 
+Uçtan Uca İş Akışı: PrimeKG/KG → Veri Temizleme & Eşleme → PyKEEN (TransE / RotatE) → SMILES Çıkarımı → RDKit 
+ECFP4 (1 024-bit) → Tox21 Veri Havuzu → XGBoost & Çok Görevli MLP → Toksisite Süzgeci & Pareto Sıralama → Streamlit 
+Kokpiti. 
+   
+   
+ 
+ 
+3. Kimyasal Temsil 
+ 4. Toksisite Modeli 
+ 5. Streamlit Kokpiti 
+ 
+  
+   
+  
+  
+   
+    
+ 
+     
+  riski 
+göstergesi olarak konumlandırılmalıdır. 
+0. PROJEYİ PARÇALARA AYI RMA VE AŞAMA 
+MATRİSİ 
+GENEL BAKIŞ 
+ 
+İlaç Yeniden Konumlandırma ve Moleküler Toksisite Tahmini 
+Uçtan Uca Biyomedikal Yapay Zeka & Çizge Öğrenimi Yol Haritası 
+ 
+ 
+ 
+ 
+ 
+Aşama Ana Çıktı & Hedef Başarı Ölçütü & Doğrulama 
+1 Veri + ortam + proje iskeleti Veriler okunuyor, ortam ve şema doğrulanıyor 
+2 PrimeKG temizleme ve alt çizge İlaç-hastalık-gen ilişkileri eksiksiz çıkarılıyor 
+3 PyKEEN TransE baseline MRR, Hits@1 /3/1 0 metrikleri ölçülebiliyor 
+4 RotatE + karşılaştırma Model karşılaştırma tablosu ve en iyi konfigürasyon hazır 
+5 Tox21 + RDKit hazırlığı 1 024-bit Morgan/ECFP4 fingerprint üretiliyor 
+6 Scaffold split Train/val/test k ümelerinde scaffold çakışması (overlap) 
+yok 
+7 XGBoost toksisite modelleri 1 2 görev için test ROC-AUC ve PR-AUC sonuçları var 
+8 Çok Görevli MLP Çok görevli sinir ağı modeli ve karşılaştırması tamamlandı 
+9 Uçtan uca pipeline entegrasyonu KG adayları otomatik olarak toksisite modeline aktarılıyor 
+1 0 Streamlit kullanıcı arayüzü Hastalık seçiminden aday analizine uçtan uca akış 
+çalışıyor 
+1 1 Görselleştirme + XAI katmanı PyVis grafı, RDKit 2D ve 3D molekül, model açıklamaları 
+hazır 
+1 2 Test + Teknik Rapor Tüm deneyler seed-sabitli, tekrarlanabilir ve raporlandı 
+TEKNİ K Mİ MARİ & UYGULAMA DOKÜMANI 
+
+--- SAYFA 2 ---
+İlaç Yeniden Konumlandırma & Toksisite Yol Haritası Sayfa 2 / 6  
+Dikkat: Notebook içinde plansız paket kurma; model 
+ağırlıklarını Git'e ekleme, LFS/harici depola.  
+Dikkat: DrugBank lisansı ile PrimeKG yazılım lisansını  
+karıştırma; kaynak lisanslarını  belirt. 
+ 
+ 
+1. Geliştirme Ortamının Kurulması Tekrarlanabilir  Altyapı 
+Amaç: Python tabanlı, yinelenebilir ve izole edilmiş bir proje ortamı oluşturmak. 
+YAPILACAKLAR 
+VS Code + WSL/Linux ortamında proje çalışma dizinini yapılandır. 
+Python 3.1 1 sanal ortamı oluştur; bağımlılıkları requirements. txt 
+ile dondur. 
+Git deposu aç; data/raw, data/processed, models, src, 
+notebooks, app, reports, tests klasörlerini ayır. 
+RDKit, pandas, numpy, scikit -learn, xgboost, torch, pykeen, streamlit,  
+pyvis, stmol paketlerini kur.  
+ÇIKTILAR & KONTROL 
+requirements. txt, README. md, 
+environment_check. py 
+Doğrulama: Paket import testleri  hatasız geçiyor, 
+PyTorch/CUDA uyumu onaylandı.  
+ 
+ 
+2. PrimeKG Verisinin Alınması ve İncelenmesi Bilgi Çizgesi Hazırlığı 
+Amaç: İlk MVP bilgi çizgesini Harvard Dataverse üzerindeki güncel ve bütünleşik PrimeKG ile kurmak. 
+YAPILACAKLAR 
+PrimeKG dağıtımını ve veri lisanslarını kontrol et; ham CSV'yi 
+data/raw/primekg/  dizinine  al. 
+Kolon adlarını, veri  tiplerini, eksik de ğerleri, node type ve relation type  
+dağılımlarını incele.  
+İlaç, hastalık, gen/protein ve pathway d üğümlerini süz; ilişkileri head, 
+relation, tail üçlülerine dönüştür. 
+Entity ID → entity name/type e şleme ve ilaç SMILES kimlik e şleme 
+tablolarını tasarla. 
+ÇIKTILAR & KONTROL 
+primekg_raw. csv, entities. csv, 
+relations. csv, triples. tsv, 
+data_dictionary. md 
+Doğrulama: Düğüm/kenar sayıları  raporlandı; ilaç-
+hastalık-gen filtreleri çalışıyor. 
+ 
+ 
+3. Kimlik Eşleme ve Kimyasal Kimlik Katmanı Varlık Entegrasyonu 
+Amaç: KG'deki ilaçları toksisite veri kümesindeki moleküllerle güvenilir biçimde eşleştirmek. 
+YAPILACAKLAR 
+Drug entity ID, isim, CAS/PubChem/ChEMBL/DrugBank kimliklerini  
+çıkar. 
+SMILES için canonical SMILES standardı  belirle; stereokimya ve tuz  
+formu farklarını kaydet. 
+1 drug_id'nin çoklu SMILES'a ba ğlandığı durumları ve 
+tekilleştirilemeyenleri ayıkla.  
+ÇIKTILAR & KONTROL 
+drug_chemical_mapping. csv, 
+unmatched_drugs.  csv 
+Doğrulama: KG adaylarının b üyük çoğunluğunda 
+otomatik SMILES sorgusu çözüldü. 
+ 
+ 
+4. PyKEEN ile Triple ve Split Hazırlığı Veri Bölme & Sızıntı Önleme 
+Amaç: Bilgi çizgesini link prediction eğitimine uygun hale getirmek ve veri sızıntısını önlemek. 
+YAPILACAKLAR 
+PyKEEN TriplesFactory kur; train/val/test b ölmesini (%80/1 0/1 0) yap. 
+Doğrulama/test entity ve relation'larının  eğitimde varlı ğını (coverage) 
+denetle. 
+Inverse relation  sızıntısını engelle; drug-disease test ba ğlarının 
+eğitimde bulunmadı ğını test et. 
+ÇIKTILAR & KONTROL 
+train. tsv, validation. tsv, test. tsv, 
+split_report. j son 
+Doğrulama: Entity/relation coverage kontrolü tam; 
+leakage riski sıfırlandı. 
+ 
+ 
+ 
+5. TransE Baseline Modeli KGE Temel Seviye 
+Amaç: İlk KGE modelini basit ve doğrulanabilir bir taban (baseline) olarak eğitmek. 
+YAPILACAKLAR 
+PyKEEN pipeline ile TransE eğit; embedding boyutu 1 00–200, lr: 
+0.001 –0.01 aralığında dene. 
+1 00–500 epoch aralı ğında erken durdurmayı  validation metri ğine 
+bağla. 
+MRR, Hits@1 , Hits@3, Hits@1  0 metriklerini test et; checkpointleri  
+kaydet. 
+ÇIKTILAR & KONTROL 
+transe_model/, kg_metrics_transe. csv, 
+training_log. j son 
+Doğrulama: Model inference için yüklenebiliyor, 
+sabit seed ile sonu ç tekrarlanıyor.  
+BÖLÜM I : PROJE ALTYAPI SI VE KGE MODELLEME 
+ AŞAMA 1 — 5 
+Dikkat: Hits@1 0 ≥ 0.70 bir hedef olarak izlenmelidir; 
+peşin başarı garantisi verilmemelidir. 
+Dikkat: Çizgede leakage, yapay olarak yüksek Hits@1 0 
+üretir fakat gerçek genelleme yetene ğini yok eder. 
+Dikkat: İsim eşleşmesi tek başına yetersizdir; 
+tautomer/tuz farklılıklarını belgele. 
+
+--- SAYFA 3 ---
+İlaç Yeniden Konumlandırma & Toksisite Yol Haritası Sayfa 3 / 6  
+ 
+ 
+6. RotatE ve KGE Karşılaştırması Model Seçimi 
+Amaç: TransE'ye alternatif karmaşık uzay rotasyonel model (RotatE) ile karşılaştırma yapmak. 
+YAPILACAKLAR 
+RotatE'yi aynı veri bölmeleri üzerinde çalıştır; embedding ve lr  
+parametrelerini kontrol et. 
+Validation MRR / Hits@1  0 de ğerlerine g öre en  iyi konfigürasyonu seç. 
+TransE ve RotatE sonu çlarını aynı test setinde kar şılaştır; en iyi  modeli 
+üretime al. 
+ÇIKTILAR & KONTROL 
+kge_comparison. csv, rotate_model/, 
+best_kge_config. j son 
+Doğrulama: Seçim yalnızca test skoruna g öre değil, 
+validation seti üzerinden yapıldı.  
+ 
+ 
+ 
+7. Hastalıktan İlaç Adayı Üretme Aday Çıkarımı 
+Amaç: Seçilen hedef hastalık için KGE tabanlı Top-K aday ilaç listesi oluşturmak. 
+YAPILACAKLAR 
+Disease entity'sini  bul ve ilaç adaylarını ilgili relation(lar) üzerinden 
+skorla. 
+Her aday için raw KGE score ve rank üret; bilinen bağlantıları ve 
+adayları etiketle. 
+Top-K aday listesini drug_id, drug_name, KGE skoru ve SMILES  
+eşlemesiyle derle. 
+ÇIKTILAR & KONTROL 
+candidate_generator. py, 
+candidate_results.  csv 
+Doğrulama: Hastalık sorgusunda deterministik  
+sıralı liste üretiliyor. 
+ 
+ 
+8. Tox21 Verisinin Hazırlanması Hedef Toksisite Verisi 
+Amaç: 1 2 toksisite görevi için temiz, dengesizlikleri yönetilmiş bir eğitim tabanı oluşturmak. 
+YAPILACAKLAR 
+Tox21 verisini data/raw/tox21 / içine al; 1 2 assay/target kolonunu  
+belirle. 
+SMILES kolonunu  tara; geçersiz ve duplicate molek ülleri ayıkla. Eksik 
+etiketleri (missing values)  0 kabul etme; NaN olarak koru ve  
+maskele. 
+ÇIKTILAR & KONTROL 
+tox21 _clean. csv, 
+tox21 _label_report. csv, 
+invalid_smiles. csv 
+Doğrulama: 1 2 görevin pozitif/negatif/eksik  
+dağılımları eksiksiz raporlandı.  
+ 
+ 
+ 
+9. RDKit ECFP4 / Morgan Fingerprint Kimyasal Özellik Çıkarımı 
+Amaç: Molekülleri standardize 1 024-bit ikili kimyasal öznitelik vektörlerine dönüştürmek. 
+YAPILACAKLAR 
+SMILES → RDKit Mol dönüşümünü yap; canonical standartlaştırmayı 
+sabitle. 
+Morgan radius=2 (ECFP4 e şdeğeri) ve nBits=1 024 ile binary fingerprint  
+üret. 
+X matrisi (N × 1 024) ve Y matrisi (N × 1 2) yapılarını oluştur; işlem 
+sürelerini logla.  
+ÇIKTILAR & KONTROL 
+tox21 _features. npz, 
+fingerprint_metadata. j son 
+Doğrulama: Tüm geçerli moleküllerin 1 024-bit 
+vektörü çıkarıldı; parametreler belgelendi.  
+ 
+ 
+1 0. Bemis-Murcko Scaffold Split İskelet Bazlı Bölme 
+Amaç: Modelin kimyasal iskeletleri ezberlemesini engelleyen katı bir test ayrımı kurmak. 
+YAPILACAKLAR 
+Her molekülün Bemis-Murcko scaffold yapısını  çıkar; aynı iskeleti tek 
+grupta tut. 
+Grupları train/val/test kümelerine %80/1 0/1 0 oranında da ğıt. 
+Kümeler arasında iskelet kesi şiminin sıfır (scaffold overlap = 0) 
+olduğunu doğrula. 
+ÇIKTILAR & KONTROL 
+tox21 _train. csv, tox21 _val. csv, 
+tox21 _test. csv, 
+scaffold_split_report. j son 
+Doğrulama: Scaffold kesi şimi = 0; bölme boyutları 
+ve assay da ğılımları doğrulandı. 
+ 
+ 
+BÖLÜM I I : KGE KARŞILAŞTIRMA VE MOLEKÜLER TEMSİL 
+ AŞAMA 6 — 1 0 
+Dikkat: Yüksek sınıf dengesizliğinde accuracy 
+yanıltıcıdır; dengeli metrikler kullanılmalıdır. 
+Dikkat: Tautomer ve farklı SMILES yazımları scaffold 
+split'e rağmen sızıntı yapabilir; denetle.  
+Dikkat: ECFP4 için radius=2 tanımını tutarlı kullan; RDKit 
+sürüm farklılıklarını kaydet. 
+Dikkat: KGE skorunu biyolojik kanıt gibi  sunma; aday 
+önceliklendirme skoru olarak belirt.  
+Dikkat: Hiperparametre optimizasyonunda kesinlikle test  
+setini kullanma.  
+
+--- SAYFA 4 ---
+İlaç Yeniden Konumlandırma & Toksisite Yol Haritası Sayfa 4 / 6  
+ 
+ 
+1 1 . XGBoost Toksisite Baseline Klasik ML Modeli 
+Amaç: 1 2 assay için pratik, güçlü ve hızlı bir ağaç tabanlı model tabanı kurmak. 
+YAPILACAKLAR 
+Her assay için ayrı ikili (binary) XGBoost sınıﬂandırıcı eğit. 
+Sadece ilgili assay etiketine sahip örnekleri kullan; eksikleri  dahil etme. 
+Dengesizlik i çin scale_pos_weight uygula; hiperparametreleri 
+validation ile ayarla. 
+ÇIKTILAR & KONTROL 
+xgb_models/assay_*. j son, 
+xgb_metrics. csv, xgb_predictions. csv 
+Doğrulama: 1 2 assay için test ROC-AUC ve PR-AUC 
+metrikleri hesaplandı. 
+ 
+ 
+ 
+1 2. Çok Görevli MLP (Multi-Task Neural Network) Derin Öğrenme 
+Amaç: 1 2 toksisite görevini ortak kimyasal temsilden öğrenen bir sinir ağı geliştirmek. 
+YAPILACAKLAR 
+Mimari: Girdi 1 024 → 51 2 → 256 → 1 2 çıktı düğümü; ReLU, Dropout  ve 
+BatchNorm uygula. 
+Çıkışta sigmoid logits ile BCEWithLogitsLoss kullan; eksik etiketleri  
+maskele. 
+Validation performansına g öre checkpoint sakla;  XGBoost ile aynı  splitte 
+kıyasla. 
+ÇIKTILAR & KONTROL 
+mlp_best. pt, mlp_metrics. csv, 
+training_history. csv 
+Doğrulama: Eksik etiketler negatif sayılmadı;  çok 
+görevli çıkarım stabil çalışıyor. 
+ 
+ 
+1 3. Toksisite Değerlendirme Protokolü Metrik Doğrulama 
+Amaç: Modelleri sınıf dengesizliğine duyarlı, görev bazında sağlam metriklerle sınamak. 
+YAPILACAKLAR 
+Her assay için ROC-AUC, PR-AUC, Precision, Recall, F1  ve Balanced 
+Accuracy hesapla. 
+Mean ROC-AUC ve macro -average değerlerini çıkar; bootstrap g üven 
+aralıklarını belirle. 
+XGBoost ve MLP sonu çlarını birleşik karşılaştırma tablosunda bir  araya 
+getir. 
+ÇIKTILAR & KONTROL 
+toxicity_final_metrics. csv, 
+model_comparison. csv, 
+evaluation_report. md 
+Doğrulama: En kötü performans g österen ve en 
+başarılı assay'ler ayrı ayrı analiz edildi.  
+ 
+ 
+ 
+1 4. KGE + Toksisite Entegrasyonu Bütünleşik Çıkarım 
+Amaç: KG repurposing adaylarını otomatik güvenlik taramasından geçiren akışı kurmak. 
+YAPILACAKLAR 
+KGE modelinden Top -N adayı al; otomatik olarak SMILES ve 1 024-bit 
+fingerprint üret. 
+Modellerle 1 2 toksisite olasılı ğı hesapla; risk bayrakları (binary ﬂag) 
+oluştur. 
+Özet toksisite skoru  (yüksek risk assay sayısı,  maksimum risk, 
+ortalama risk) hesapla. 
+ÇIKTILAR & KONTROL 
+inference_pipeline. py, 
+integrated_candidates. csv, 
+final_ranking. j son 
+Doğrulama: Disease ID → Aday → SMILES → 1 2 
+Assay Tahmini  kesintisiz akıyor.  
+ 
+ 
+ 
+1 5. Birleşik Aday Sıralaması (Ranking Strategy) Çok Amaçlı Karar 
+Amaç: Adayın potansiyel etkinliği ile toksisite riskini dengeli bir metotla puanlamak. 
+YAPILACAKLAR 
+Baseline: Yüksek riskli molekülleri ele, kalanları KGE skoruna göre sırala 
+(Hard Filter).  
+Alternatif: Normalize link skoru ile toksisite riski  arasında ağırlıklı 
+birleşik skor olu ştur. 
+İleri Yöntem: Yüksek KGE + Düşük Toksisite Pareto sınırını  hesapla ve 
+elenme nedenlerini kaydet.  
+ÇIKTILAR & KONTROL 
+ranking_strategy.  md, 
+final_candidates.  csv 
+Doğrulama: Sıralama ve eleme mantı ğı 
+deterministik ve şeffaf biçimde raporlanıyor.  
+BÖLÜM I I I : TOKSİSİTE MODELLEME VE KARAR ENTEGRASYONU 
+ AŞAMA 1 1 — 1 5 
+Dikkat: Test setini hiperparametre optimizasyonunda  
+kullanma; tek ortalama yerine assay bazlı sun. 
+Dikkat: Keyfi ağırlıklar atama; ağırlık katsayılarını 
+duyarlılık analiziyle temellendir.  
+Dikkat: Pozitif toksisite tahmini kesin toksisite değildir; 
+'predicted assay risk' olarak raporla. 
+Dikkat: Mean ROC-AUC > 0.80 hedefi deneysel bir 
+amaçtır; peşin garanti olarak yazılmamalıdır.  
+Dikkat: Görevlerin veri hacmi aşırı farklıysa ortak kayıp 
+fonksiyonunda ağırlıklandırma gerekebilir.  
+
+--- SAYFA 5 ---
+İlaç Yeniden Konumlandırma & Toksisite Yol Haritası Sayfa 5 / 6  
+Dikkat: XAI çıktısını biyolojik nedensellik kanıtı gibi 
+sunma; model gerek çesi olarak ver. 
+ 
+ 
+1 6. Streamlit Uygulaması İnteraktif Web UI 
+Amaç: Çevrimdışı eğitilen modelleri hızlı, tepkisel bir arayüzde birleştirmek. 
+YAPILACAKLAR 
+Modelleri ve eşleme tablolarını  st. cache_resource ile belleğe al. 
+Hastalık seçici + "Analiz Et" düğmesi kur; Top-N adayı toksisite 
+modeliyle birleştir. 
+Aday tıklandığında kimyasal ayrıntı panelini ve risk dağılımını göster. 
+ÇIKTILAR & KONTROL 
+app/main. py, app/components/, 
+app/services/ 
+Doğrulama: Analiz yenilemelerinde gereksiz  
+yeniden e ğitim yok; tepki s üresi 3–5 sn. 
+ 
+ 
+ 
+1 7. PyVis Biyomedikal Grafiği Ağ Görselleştirme 
+Amaç: Hastalık, hedef gen/protein ve ilaç adaylarının alt çizgesini görselleştirmek. 
+Seçilen hastalığın 1 -hop veya kontroll ü 2-hop komşuluk grafını çıkar. 
+Düğümleri (Hastalık, Gen/Protein, İlaç) farklı renk/ şekillerle kodla; 
+ilişkileri göster. 
+PyVis interaktif HTML çıktısını Streamlit bileşeni olarak göm. 
+graph_builder. py, graph_view. py 
+Doğrulama: Yalnızca ilgili alt çizge yükleniyor, tarayıcı 
+performansı korunuyor.  
+ 
+ 
+ 
+1 8. RDKit 2D ve Stmol/Py3Dmol  3D Yapı Moleküler İnceleme 
+Amaç: Seçilen ilaç adayının kimyasal geometrisini 2D ve interaktif 3D olarak sunmak. 
+SMILES üzerinden RDKit ile vektörel 2D molekül tasviri üret. 
+3D konformasyon üret (ETKDG) ve Stmol/Py3Dmol  ile etkileşimli 
+model oluştur. 
+molecule_view. py, 2D & 3D  render bileşenleri 
+Doğrulama: 3D üretilemeyen molek üllerde aray üz 
+çökmeden fallback mesajı veriyor. 
+ 
+ 
+ 
+1 9. Açıklanabilirlik (XAI Katmanı) Model Karar Analizi 
+Amaç: Modelin hangi kimyasal ve topolojik özelliklere dayanarak tahmin yaptığını açıklamak. 
+XGBoost için SHAP öznitelik önem analizini veya bit etki grafiklerini 
+bağla. 
+KGE tarafında adayın hastalıkla ili şkisini sağlayan yerel patika 
+kanıtlarını göster. 
+Final skorunu oluşturan bileşenleri (KG link + toksisite risk)  şeffafça 
+ayrıştır. 
+xai. py, explanation_panel 
+Doğrulama: Hem graf patikaları  hem de moleküler 
+risk gerekçeleri izlenebiliyor.  
+ 
+ 
+20. Test, Performans ve Tekrar Üretilebilirlik Kalite Güvencesi 
+Amaç: Projeyi teknik ve deneysel açıdan savunulabilir, sağlam bir temele kavuşturmak. 
+Birim testler: SMILES ayrı ştırma, fingerprint boyutu (1  024), split 
+sızıntısı. 
+Entegrasyon testi:  Hastalık → Adaylar → Toksisite → Final sıralama 
+akışını doğrula. 
+Rastgelelik tohumlarını  (seed) sabitle; eğitim ve çıkarım gecikmelerini  
+ölç. 
+tests/ dizini, experiment_log. csv, 
+final_metrics. csv 
+Doğrulama: Sıfır ortamda tüm pipeline komut  
+satırından yeniden üretilebiliyor.  
+ 
+ 
+21. Raporlama ve Akademik Sunum Proje Teslimi 
+Amaç: Tüm teknik mühendislik ve deney sürecini akademik teslim standartlarına dönüştürmek. 
+Problem tanımı, veri  lisansları, KGE TransE/RotatE kar şılaştırması ve 
+ablasyon sonuçları. 
+Tox21 scaffold split protokol ü, XGBoost vs MLP analizi, XAI  bulguları 
+ve kısıtlar. 
+final_report. pdf, architecture. png, 
+metrik tabloları 
+Doğrulama: Rapor, çalışan kod ve pipeline ile %1  00 
+uyumluluk  gösteriyor. 
+ 
+ 
+BÖLÜM IV: KOKPİT, AÇIKLANABİLİRLİK VE DOĞRULAMA 
+ AŞAMA 1 6 — 21 
+Dikkat: Uzun eğitim rutinlerini asla arayüz içine koyma; 
+eğitim strictly oﬄine olmalıdır. 
+Dikkat: 2D ve 3D yapının aynı canonical stereokimyayı 
+yansıttığından emin ol.  
+Dikkat: Gerçekleştirilmemiş hiçbir deneyi rapora yapılmış 
+gibi dahil etme.  
+Dikkat: Sonuçları sadece ekran görüntüsü olarak tutma; 
+sayısal logları da sakla. 
+Dikkat: Tüm PrimeKG'yi çizdirmeye çalışma; binlerce 
+düğüm tarayıcıyı kilitler.  
+
+--- SAYFA 6 ---
+İlaç Yeniden Konumlandırma & Toksisite Yol Haritası Sayfa 6 / 6  
+  
+ 
+  
+  
+ 
+  
+ 
+    
+ 
+   
+Uygulama Sırası — Proje Geliştirme Adımları 
+1 ) Proje dizini ve Python 3.1 1 sanal ortamı → 2) PrimeKG indirme ve şema inceleme → 3) İlaç-hastalık-gen alt kümesini çıkarıp triples 
+üretme → 4) TransE baseline'ı eğitip MRR/Hits ölçme → 5) RotatE ile karşılaştırma → 6) Tox21 → RDKit ECFP4 → Scaffold Split → 
+XGBoost/MLP → 7) İki modeli tek inference hattında birleştirme → 8) Streamlit, PyVis, 2D ve 3D görselleştirme kokpiti. 
+ 
+ 
+ 
+Kritik Başarı Metrikleri & Hedef Eşikleri 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+BÖLÜM V: MİMARİ, TEKNOLOJİ YIĞINI VE UYGULAMA SIRASI 
+ TEKNİ K REFERANS 

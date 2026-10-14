@@ -1,0 +1,7 @@
+{
+  "mlp_seconds": 4.0217342849996385,
+  "mlp_best_epoch": 2,
+  "mlp_validation_ROC-AUC": 0.7767484218248106,
+  "selection": "XGBoost per-assay validation AP; MLP validation macro ROC-AUC",
+  "test_used_for_selection": false
+}

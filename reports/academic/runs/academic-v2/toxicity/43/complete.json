@@ -1,0 +1,13 @@
+{
+  "seed": 43,
+  "files": {
+    "logistic.joblib": "66c8982083b4a008477ae25073a923837412b3593a6ed61f3c6baba9c3b39cb0",
+    "mlp.joblib": "cd0836c05063de95adcb28ec3987e97e279ba3f2bc74b5fd09462ec1013ca307",
+    "mlp.pt": "2456cd716ebf737b51864c4bdd0eb4a9d7780f2c6b26dcf4369847954c20a9c5",
+    "prevalence.joblib": "6dcaee08030956d9a4dbd87bac5a4e6d384caff110b8c18f03c47a98afe6fdfb",
+    "xgboost.joblib": "33fdba14ff7c1f36297bd25b0151ff59c24267ae763fcea7f990bea4fd3a1f91"
+  },
+  "seconds": 57.76500550000037,
+  "selection": "validation ROC-AUC; calibration held-out groups; threshold 0.5",
+  "test_accessed": false
+}

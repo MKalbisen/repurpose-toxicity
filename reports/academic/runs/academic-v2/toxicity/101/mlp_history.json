@@ -1,0 +1,90 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.1261028259299521,
+      "validation_macro_auc": 0.7358498027149896
+    },
+    {
+      "epoch": 2,
+      "loss": 0.7896009988563005,
+      "validation_macro_auc": 0.7368737413360037
+    },
+    {
+      "epoch": 3,
+      "loss": 0.5936316258685533,
+      "validation_macro_auc": 0.7287051815921614
+    },
+    {
+      "epoch": 4,
+      "loss": 0.45273765505746355,
+      "validation_macro_auc": 0.7264461299071078
+    },
+    {
+      "epoch": 5,
+      "loss": 0.3747494747472364,
+      "validation_macro_auc": 0.7105395398289698
+    },
+    {
+      "epoch": 6,
+      "loss": 0.321369182578353,
+      "validation_macro_auc": 0.7201554500911193
+    },
+    {
+      "epoch": 7,
+      "loss": 0.27617528133614117,
+      "validation_macro_auc": 0.717326066642921
+    },
+    {
+      "epoch": 8,
+      "loss": 0.23933195478694383,
+      "validation_macro_auc": 0.699048719111966
+    },
+    {
+      "epoch": 9,
+      "loss": 0.21509249196496122,
+      "validation_macro_auc": 0.699973432904952
+    },
+    {
+      "epoch": 10,
+      "loss": 0.20416164987309035,
+      "validation_macro_auc": 0.6952323147540129
+    },
+    {
+      "epoch": 11,
+      "loss": 0.18643441189860188,
+      "validation_macro_auc": 0.7059064575393489
+    },
+    {
+      "epoch": 12,
+      "loss": 0.16832169214653414,
+      "validation_macro_auc": 0.6967156270968585
+    },
+    {
+      "epoch": 13,
+      "loss": 0.16395956970924555,
+      "validation_macro_auc": 0.7024817552015317
+    },
+    {
+      "epoch": 14,
+      "loss": 0.14109626135160758,
+      "validation_macro_auc": 0.6949343818736026
+    },
+    {
+      "epoch": 15,
+      "loss": 0.13486847056205883,
+      "validation_macro_auc": 0.6907599638501344
+    },
+    {
+      "epoch": 16,
+      "loss": 0.12830494205619014,
+      "validation_macro_auc": 0.6923700699646406
+    },
+    {
+      "epoch": 17,
+      "loss": 0.12576907942461413,
+      "validation_macro_auc": 0.6885126112721901
+    }
+  ],
+  "seconds_this_invocation": 9.157876600000236
+}

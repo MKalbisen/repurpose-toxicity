@@ -1,0 +1,21 @@
+{
+  "retrieved_unix": 1791460308.431595,
+  "primekg_doi": "doi:10.7910/DVN/IXA7BM",
+  "origin": "pinned_community_mirror",
+  "official_access_error": "403 Client Error: Forbidden for url: https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi%3A10.7910%2FDVN%2FIXA7BM",
+  "primekg_version": "mirror commit 03de2c6613831c66203fb8af8ac7f3fdae6b1887; official version unverified",
+  "license_metadata": "See PrimeKG original source licenses; mirror does not grant new rights.",
+  "sources": [
+    {
+      "url": "https://huggingface.co/datasets/hieupth/primekg/resolve/03de2c6613831c66203fb8af8ac7f3fdae6b1887/org/kg.csv",
+      "file": "data/raw/primekg/primekg_raw.csv",
+      "sha256": "0a5a010fcd88dcec572a573d98c26c1c244a11567092b6161d3ded611cfb5c69"
+    },
+    {
+      "url": "https://deepchemdata.s3-us-west-1.amazonaws.com/datasets/tox21.csv.gz",
+      "file": "data/raw/tox21/tox21.csv.gz",
+      "sha256": "45d09792492ce049039dd24aa27b07fc79ce20c573187d4d90bcd178c0c0d360"
+    }
+  ],
+  "license_note": "PrimeKG software MIT != underlying source licenses; DrugBank is restricted."
+}

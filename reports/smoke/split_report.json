@@ -1,0 +1,26 @@
+{
+  "seed": 42,
+  "sizes": {
+    "train": 1440,
+    "validation": 180,
+    "test": 180
+  },
+  "requested_ratios": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "actual_ratios": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "pair_group_overlap": [
+    0,
+    0,
+    0
+  ],
+  "entity_coverage": true,
+  "relation_coverage": true,
+  "policy": "All relations and directions for an unordered endpoint pair stay in one split."
+}

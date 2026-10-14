@@ -1,0 +1,90 @@
+{
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 1.1109790441601775,
+      "validation_macro_auc": 0.729447643014688
+    },
+    {
+      "epoch": 2,
+      "loss": 0.7750650283902191,
+      "validation_macro_auc": 0.7309705185723026
+    },
+    {
+      "epoch": 3,
+      "loss": 0.5750254351039266,
+      "validation_macro_auc": 0.7195775145242732
+    },
+    {
+      "epoch": 4,
+      "loss": 0.44861718249875443,
+      "validation_macro_auc": 0.7129117835518389
+    },
+    {
+      "epoch": 5,
+      "loss": 0.365119572295699,
+      "validation_macro_auc": 0.706001108478151
+    },
+    {
+      "epoch": 6,
+      "loss": 0.3059521428374357,
+      "validation_macro_auc": 0.7087332360623154
+    },
+    {
+      "epoch": 7,
+      "loss": 0.2666180615508279,
+      "validation_macro_auc": 0.7002831422652339
+    },
+    {
+      "epoch": 8,
+      "loss": 0.23479404248470484,
+      "validation_macro_auc": 0.7002705214123343
+    },
+    {
+      "epoch": 9,
+      "loss": 0.21365597116392712,
+      "validation_macro_auc": 0.6951092007322419
+    },
+    {
+      "epoch": 10,
+      "loss": 0.18425822812457418,
+      "validation_macro_auc": 0.7011028245194443
+    },
+    {
+      "epoch": 11,
+      "loss": 0.1676733112612436,
+      "validation_macro_auc": 0.6960564958287212
+    },
+    {
+      "epoch": 12,
+      "loss": 0.15972780800142952,
+      "validation_macro_auc": 0.7016853292457453
+    },
+    {
+      "epoch": 13,
+      "loss": 0.16078548687835073,
+      "validation_macro_auc": 0.7048894892678182
+    },
+    {
+      "epoch": 14,
+      "loss": 0.1557306546804517,
+      "validation_macro_auc": 0.6929006763436268
+    },
+    {
+      "epoch": 15,
+      "loss": 0.14110734417688015,
+      "validation_macro_auc": 0.6907442579723707
+    },
+    {
+      "epoch": 16,
+      "loss": 0.13665835334118023,
+      "validation_macro_auc": 0.6900626902354278
+    },
+    {
+      "epoch": 17,
+      "loss": 0.12909799744916517,
+      "validation_macro_auc": 0.6983345352689355
+    }
+  ],
+  "seconds_this_invocation": 9.719866500000535
+}

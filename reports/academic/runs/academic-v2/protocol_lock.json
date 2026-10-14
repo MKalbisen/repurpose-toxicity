@@ -1,0 +1,130 @@
+{
+  "created": "2026-10-11T10:02:36.460843+00:00",
+  "snapshot": {
+    "packages": {
+      "torch": "2.11.0",
+      "pykeen": "1.11.1",
+      "numpy": "2.4.3",
+      "pandas": "2.2.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.7.2",
+      "xgboost": "3.2.0",
+      "rdkit": "2026.9.1"
+    },
+    "config": {
+      "version": "academic-v2",
+      "dataset": "academic-v2",
+      "split_seed": 2026,
+      "seeds": [
+        17,
+        29,
+        43,
+        71,
+        101
+      ],
+      "device": "auto",
+      "threads": 2,
+      "toxicity": {
+        "logistic_C": [
+          0.1,
+          1.0
+        ],
+        "xgb_estimators": [
+          100,
+          300
+        ],
+        "xgb_depth": 4,
+        "mlp_epochs": 100,
+        "patience": 15,
+        "batch_size": 128,
+        "learning_rate": 0.001,
+        "calibration": "sigmoid_on_separate_calibration_groups",
+        "threshold": 0.5
+      },
+      "kg": {
+        "dimensions": [
+          100,
+          200
+        ],
+        "learning_rates": [
+          0.001,
+          0.01
+        ],
+        "epochs": 200,
+        "batch_size": 256,
+        "negatives": 16,
+        "validation_every": 5,
+        "patience": 3,
+        "loss": "softplus_positive_negative_mean",
+        "selection": "drug_only_indication_filtered_MRR",
+        "negative_sampling": "uniform_head_or_tail_entities_train_positives_filtered"
+      },
+      "uncertainty": {
+        "bootstrap_repeats": 2000,
+        "confidence": 0.95
+      },
+      "integration": {
+        "weights": [
+          0.0,
+          0.25,
+          0.5,
+          0.7,
+          0.75,
+          1.0
+        ],
+        "primary_weight": 0.7,
+        "risk_threshold": 0.5
+      },
+      "claims": {
+        "retrospective": true,
+        "previous_smoke_test_exposure": true,
+        "independent_external_validation": false,
+        "clinical_efficacy_or_safety": false
+      }
+    },
+    "code": {
+      "src/repurpose/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/repurpose/academic/__init__.py": "6cbefbbfc888cdd6c371fb7c84f5708cdd92a80dd53cad018decdc70b23ffa28",
+      "src/repurpose/academic/audit.py": "011f0b70ba2b8b611fac341c13eb51dbc06a21504b099e12bd67f9e02dba07de",
+      "src/repurpose/academic/cli.py": "1372e55092441254f9e77b6c31bcd604cdebd694e454b926296eb703d8b46215",
+      "src/repurpose/academic/diagnostic.py": "56d19dfcda1a8c3ec04fd88b9614045ae8779076d334d3253894e0a70b703690",
+      "src/repurpose/academic/experiment.py": "ecda8a4f990264aba3d2800b6dc89e37cf4a7345731298c8143d09f29cb9b39b",
+      "src/repurpose/academic/kg.py": "98627ddfe9abd821d2cd0b8b2275fb0894620c85e7f1bd049e76c32f8aa9b86d",
+      "src/repurpose/academic/locking.py": "7e7041faee038203df7cffc32c63da1b1eed77cdd186918397e3e828e494e7f6",
+      "src/repurpose/academic/metrics.py": "07b8d8d8ed4644a8e93eebb5dde487d4178d3752879e184bfb7bf6efc2034a77",
+      "src/repurpose/academic/prepare.py": "d53489bb6b97397f8aade6bf5cd77d29a5a70b714506df8862cb67fa450d7d65",
+      "src/repurpose/academic/protocol.py": "12e0a58ba2ec6157aaa7b905921b8e92002c98d0ba2f73c4d4450c2695d3f17d",
+      "src/repurpose/academic/state.py": "63a851915b7cbc4e4d681e7238f2ab1c7c54cdb14b159ed3719c6a250eeea3e9",
+      "src/repurpose/academic/toxicity.py": "d7da9f93f7248c948a74ab4828848f6115833b3155e36d11549679d8a62ddc1c",
+      "src/repurpose/cli.py": "58eea77c74184db9cfcb35f371d729bc287d9dcaffc4eb8ca49ca0dd42b95eff",
+      "src/repurpose/data/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/repurpose/data/chemistry.py": "916ec446d135396ed196b9c1aa2a83551db097006452368dc6a5c0eb50773552",
+      "src/repurpose/data/download.py": "6e8baf74d1d4506fec33439212414491fa3718cffb37d4253c42e8ad385b11e1",
+      "src/repurpose/data/kg_data.py": "6464baf8e1463fc2ffeadba1172bf618c3ff10a03b3c2194e57c06dfa9aff41a",
+      "src/repurpose/data/mapping.py": "42e9b4468fd41c1199e9af393052598dbcb5003733ad85a5459a7ea3372e2e43",
+      "src/repurpose/data/tox21.py": "fd3f97ff631be8ceae9637a349a22fb9a5aaa4d02b0d0c0a2174b6715ffb58de",
+      "src/repurpose/integration/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/repurpose/integration/inference_pipeline.py": "3ec61e8341442448faf53b4a9c9d5c05e78a747ab66e6ee1a3d02b540946bea5",
+      "src/repurpose/integration/ranking.py": "eb4758650fc8948a793e681f9e48b7db37315b5ecb40becf4aa23e741cae092e",
+      "src/repurpose/kg/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/repurpose/kg/candidate_generator.py": "423af0a80fe339cd8e3d3c59de7bf0ddc9cf35ec7aa5becda55c92315e23f8d6",
+      "src/repurpose/kg/train.py": "78a76c8a6db30db0b48419ef152cdd1ecda12440c8cc2a13da08a0b991c4977f",
+      "src/repurpose/reporting.py": "b97ecd1c2c817a55552325df19b9f3d55fc13ebfee6fdb5b3e3afb304ba7c86c",
+      "src/repurpose/toxicity/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/repurpose/toxicity/evaluate.py": "6f0bc0f67325f40b0bc57b174b94a9c44dc613edf259ae67e6f98b3ee9368a08",
+      "src/repurpose/toxicity/models.py": "ac3573fae76c773614bda326f76aa779dde58f2119d6f638cd71d8f3f4ce70a2",
+      "src/repurpose/toxicity/train.py": "5b6aca4704fd394fa9f52b04d4d2a0744d564e1fa3edddbb29134d2d60da0bb9",
+      "src/repurpose/utils.py": "65166e8015b08db15b72af0ec4c43cce656c34ad64476720dba811cabc1e4e52",
+      "src/repurpose/visualization/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/repurpose/visualization/graph_builder.py": "205ef92bcefead1c37c871bc3da0b198f18872db4ff86c480855e5391e9ae3e8",
+      "src/repurpose/visualization/molecule_view.py": "31729d7775c0b3b1df5d3e1b6a9fb7f85ad21d59baec71050b1a5b726af97777",
+      "src/repurpose/visualization/xai.py": "5a0c3f7a9b493aab43f7c8bd7458b687e969b694eb6ea23f5b62e6326982943e"
+    },
+    "data": {
+      "toxicity": "4beba26cc949ae068d559fcd850e3d59928934673a633505885bb6053d71c86e",
+      "kg": "c11bf56bff141d3d7475b4518d3858683b06aecb03dfc08afd7dfe7ae30fabbb"
+    }
+  },
+  "sha256": "dd5a2ce3f9c50e81aad21c5848480eabce6361edd0179b7d164f52f61a123a4b",
+  "scope": "retrospective benchmark; historical test exposure disclosed; no clinical claims"
+}

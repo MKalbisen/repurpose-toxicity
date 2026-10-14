@@ -1,0 +1,20 @@
+{
+  "rdkit_version": "2026.03.6",
+  "radius": 2,
+  "n_bits": 1024,
+  "binary": true,
+  "include_chirality": false,
+  "canonical_smiles": "isomeric, charge/stereo/salt retained",
+  "split_identity": "fragment parent + canonical tautomer + achiral Murcko; acyclic together",
+  "shape": [
+    7822,
+    1024
+  ],
+  "seconds": 115.52872743199987,
+  "raw_rows": 7831,
+  "clean_rows": 7822,
+  "invalid_rows": 8,
+  "collapsed_duplicates": 0,
+  "invalid_scaffold_rows": 1,
+  "conflicting_labels": 0
+}

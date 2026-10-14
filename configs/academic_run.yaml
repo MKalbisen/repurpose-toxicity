@@ -1,0 +1,40 @@
+# Fixed before new model performance is inspected. Retrospective benchmark.
+version: academic-v2
+dataset: academic-v2
+split_seed: 2026
+seeds: [17, 29, 43, 71, 101]
+device: auto
+threads: 2
+toxicity:
+  logistic_C: [0.1, 1.0]
+  xgb_estimators: [100, 300]
+  xgb_depth: 4
+  mlp_epochs: 100
+  patience: 15
+  batch_size: 128
+  learning_rate: 0.001
+  calibration: sigmoid_on_separate_calibration_groups
+  threshold: 0.5
+kg:
+  dimensions: [100, 200]
+  learning_rates: [0.001, 0.01]
+  epochs: 200
+  batch_size: 256
+  negatives: 16
+  validation_every: 5
+  patience: 3
+  loss: softplus_positive_negative_mean
+  selection: drug_only_indication_filtered_MRR
+  negative_sampling: uniform_head_or_tail_entities_train_positives_filtered
+uncertainty:
+  bootstrap_repeats: 2000
+  confidence: 0.95
+integration:
+  weights: [0.0, 0.25, 0.5, 0.7, 0.75, 1.0]
+  primary_weight: 0.7
+  risk_threshold: 0.5
+claims:
+  retrospective: true
+  previous_smoke_test_exposure: true
+  independent_external_validation: false
+  clinical_efficacy_or_safety: false

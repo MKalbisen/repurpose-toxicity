@@ -1,0 +1,53 @@
+{
+  "platform": "Windows-10-10.0.22631-SP0",
+  "torch": "2.11.0+cu130",
+  "device": "cuda",
+  "gpu": "name, memory.total [MiB], memory.free [MiB], driver_version\nNVIDIA GeForce RTX 3050 Ti Laptop GPU, 4096 MiB, 2458 MiB, 610.88\n",
+  "RAM_GiB": 15.192413330078125,
+  "available_RAM_GiB": 1.6510658264160156,
+  "train_triples": 3023797,
+  "entities": 47130,
+  "trials": [
+    {
+      "family": "TransE",
+      "dimension": 100,
+      "batch_seconds": 0.010898196363648987,
+      "estimated_epoch_seconds": 128.72949544742184,
+      "estimated_full_validation_seconds": 11.49364224347775,
+      "max_epochs_trial_hours": 7.279345772006521,
+      "peak_cuda_allocated_MiB": 117.98681640625
+    },
+    {
+      "family": "TransE",
+      "dimension": 200,
+      "batch_seconds": 0.016436667272715897,
+      "estimated_epoch_seconds": 194.14991382532017,
+      "estimated_full_validation_seconds": 10.520557295650772,
+      "max_epochs_trial_hours": 10.903001404691684,
+      "peak_cuda_allocated_MiB": 211.05224609375
+    },
+    {
+      "family": "RotatE",
+      "dimension": 100,
+      "batch_seconds": 0.018157085454549814,
+      "estimated_epoch_seconds": 214.4714933891424,
+      "estimated_full_validation_seconds": 13.020419617393403,
+      "max_epochs_trial_hours": 12.059754295145616,
+      "peak_cuda_allocated_MiB": 211.439453125
+    },
+    {
+      "family": "RotatE",
+      "dimension": 200,
+      "batch_seconds": 0.02438663636363675,
+      "estimated_epoch_seconds": 288.0549487272773,
+      "estimated_full_validation_seconds": 11.161394773912237,
+      "max_epochs_trial_hours": 16.127068204558874,
+      "peak_cuda_allocated_MiB": 399.41259765625
+    }
+  ],
+  "maximum_grid_estimated_hours": 463.6916967640269,
+  "MLP_two_epoch_wall_seconds": 0.9560648999995465,
+  "recommendation": "external_gpu",
+  "caveats": "Linear extrapolation from 55 batches, fixed hardware load; not a promise. Early stopping may shorten; I/O/checkpoint/thermal costs may lengthen. Validation query subsample extrapolation.",
+  "test_accessed": false
+}

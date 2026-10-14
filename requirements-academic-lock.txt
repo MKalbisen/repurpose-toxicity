@@ -1,0 +1,12 @@
+# Compute dependencies; install the matching CUDA torch wheel first if needed.
+torch==2.11.0
+pykeen==1.11.1
+numpy==2.4.3
+pandas==2.2.3
+scipy==1.17.1
+scikit-learn==1.7.2
+xgboost==3.2.0
+rdkit==2026.9.1
+joblib==1.5.2
+psutil==7.1.2
+PyYAML==6.0.3

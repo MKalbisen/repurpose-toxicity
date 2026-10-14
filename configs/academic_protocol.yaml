@@ -1,0 +1,38 @@
+# Historical v1 design. Active executable protocol: configs/academic_run.yaml.
+protocol_version: academic-v1-draft
+purpose: retrospective-computational-study
+status: draft
+hardware:
+  current: RTX_3050_Ti_Laptop_4GB
+  possible_future: [external_CUDA_GPU]
+  paid_compute_authorized: false
+seeds:
+  split: 2026
+  training: [17, 29, 43, 71, 101]
+endpoints:
+  kg_primary: indication_drug_only_filtered_MRR
+  kg_secondary: [Hits@1, Hits@3, Hits@10, Recall@K]
+  toxicity_primary: macro_ROC_AUC
+  toxicity_secondary: [assay_ROC_AUC, assay_average_precision, macro_average_precision, Brier, log_loss]
+model_selection:
+  kg: development_drug_only_filtered_MRR
+  toxicity: group_aware_development
+  test_access: separate_final_evaluation_after_protocol_lock
+  legacy_smoke_test_exposure: true
+  independent_external_test_available: false
+uncertainty:
+  toxicity_group: scaffold
+  kg_group: disease_id
+  confidence: 0.95
+  bootstrap_repeats: 2000
+  paired_model_comparisons: true
+baselines:
+  toxicity: [train_prevalence, LogisticRegression, XGBoost, MultiTaskMLP]
+  kg: [random_expected_rank, train_popularity, shared_gene_neighbors, TransE, RotatE]
+open_decisions:
+  - publication_or_thesis_target
+  - official_data_provenance_confirmation
+  - academic_chemical_identity_and_scaffold_audit
+  - development_calibration_partitions
+  - compute_matched_search_budget_from_cpu_gpu_pilot
+  - external_validation_with_matching_assay_endpoints
